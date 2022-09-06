@@ -5,7 +5,7 @@ Code of our paper “On the Complementarity between Pre-Training and Random-Init
 
 ## Citation
 
-If our method, and code help you, please considering cite our work:
+If our method and code help you, please considering cite our work:
 
 ```bibtex
 @inproceedings{zan2022PTvsRI,
