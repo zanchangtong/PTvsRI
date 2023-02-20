@@ -1,0 +1,2000 @@
+Argumente:% s
+Vererbungs-Stammbaum
+Ein graphische Anzeige für die Vererbung von Klassen
+Klassenhierarchie
+Johannes Schmid
+Hinzufügen von Zielen
+Ziel-Eigenschaften
+Erstellen eines Distributionspakets
+Projekteinstellungen
+Druckeinstellungen
+Druckeinstellungen
+Anjuta-Team
+Projektverwaltung
+Erstellen eines ausführbaren Programms
+Fehlerdiagnose
+Glade Oberflächenentwicklung
+Hinzufügen von Quelldateien
+Anjuta in Aktion
+Projekteinstellungen
+Erstellen
+Lokale Variablen
+Lokale Variablen
+Der Symbol-Browser
+Erstellen eines neuen Projekts
+Hinzufügen von Zielen
+Hinzufügen von Zielen
+Hinzufügen von Zielen
+Importieren von Projekten
+Importieren von Projekten
+Mario Blättermann < mariobl\ @ gnome\ .org >, 2009, 2010 Jonas Rebmann < jonas\ .rebmann\ @ googlemail\ .com >, 2010 Christian Kirbach < Christian\ .Kirbach\ @ googlemail\ .com >, 2010
+Anjuta IDE-Handbuch
+v1.0.0
+Handbuch für die Anjuta-IDE
+Naba
+Kumar
+Andy
+Piper
+Biswapesh
+Chattopadhyayr
+Johannes
+Schmid
+2001-2002
+2006-2008
+Naba Kumar, Andy Piper, Biswapesh Chattopadhyay
+Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free Software Foundation veröffentlichten Version ohne unveränderbare Abschnitte sowie ohne Texte auf dem vorderen und hinteren Buchdeckel kopiert, verteilt und / oder modifiziert werden. Eine Kopie der GFDL finden Sie unter diesem Link.
+Bei vielen der von Firmen zur Unterscheidung ihrer Produkte und Dienstleistungen verwendeten Namen handelt es sich um Marken. An den Stellen, an denen derartige Namen in einer GNOME-Dokumentation vorkommen und wenn die Mitglieder des GNOME-Dokumentationsprojekts über diese Marken informiert wurden, sind die Namen in Großbuchstaben oder mit großen Anfangsbuchstaben geschrieben.
+Anjuta-Handbuch 2.1.0
+2007
+Johannes Schmidjhs @ gnome.org
+Einführung
+Anjuta ist eine vielseitige integrierte Entwicklungsumgebung (IDE) für den GNOME-Desktop. Sie stellt eine Vielzahl an erweiterten Entwicklungsmethoden wie Projektverwaltung, Programmassistenten, einen interaktiven Debugger, den Oberflächengestalter Glade, die API-Hilfe Devhelp, den Speicher-Profiler Valgrind, den Leistungs-Profiler gprof, einen Klassengenerator, einen mächtigen Quelltexteditor, Quellcode-Browser und mehr zur Verfügung.
+Anjuta DevStudio wurde entwickelt, um einfach aber doch mächtig genug zu sein, um allen Bedürfnissen eines Programmierers nachzukommen. Wir haben Anjuta im Verlauf der Entwicklung viele neue Funktionen hinzugefügt. Unser Fokus liegt auf der gleichzeitigen Bereitstellung von Funktionalität und Nutzbarkeit und darauf, Software-Entwicklung genießbar zu machen, ohne Ihre Sinne zu überlasten. Wir planen Anjuta weiterhin zu verbessern und stabiler zu machen, um Ihnen das bestmögliche Entwicklungserlebnis zu vermitteln. Wir hoffen, Sie haben haben eine gute Zeit mit Anjuta. Falls nicht, so helfen Sie uns bitte es besser zu machen, und melden Sie Fehler und Verbesserungsvorschläge.
+Im folgenden Bildschirmfoto sehen Sie einiges von dem, was Ihnen in Anjuta begegnen werden.
+Anjuta hat ein flexibles und fortgeschrittenes Docking-System, das es Ihnen erlaubt alle Ansichten so anzuordnen, wie Sie es wollen. Sie können die Ansichten ziehen und ablegen, um das Layout neu anzuordnen. Die Layouts sind den Projekten zugeordnet, damit verschiedene Layouts für verschiedene Projekte gepflegt werden können. Alle Ansichten können minimiert werden, um die Übersicht zu verbessern. Minimierte Ansichten erscheinen als Symbole am linken Rand des Hauptfensters. Sie können alle Menüaktionen konfigurieren, indem Sie entweder tippen, während der Mauszeiger über einem Menüpunkt ist (der übliche Weg unter GNOME), oder direkt durch einen Dialog zur Zuordnung der Tastenkombinationen.
+Bitte melden sie alle Probleme, auf die sie bei der Nutzung von Anjuta stoßen - das hilft dabei, die Software zu verbessern als auch der Open-Source-Gemeinschaft.
+Erste Schritte mit Anjuta
+Menüs und Tastenkombinationen
+Am oberen Rand des Anjuta-Hauptfensters ist die Menüleiste. Durch sie ist nahezu die gesamte Funktionalität von Anjuta durch Menüpunkte erreichbar. Aktionen wurden je nach Typ eingeteilt. Dateioperationen beispielsweise finden Sie im Datei-Menü.
+Menüleiste
+Anjuta-Menüleiste
+Menü » Datei «
+Tastenkombinationen sind für viele Menüpunkte verfügbar. Alle Tastenkombinationen werden neben dem zugeordneten Menüpunkt angezeigt. Einige weitere hilfreiche Tastenkombinationen sind hier aufgeführt.
+Editorseite wechseln: StrgAltBild ↑ (vorwärts) und StrgAltBild ↓ (rückwärts). Sie können auch Seiten wechseln, indem Sie mit der rechten Maustaste auf die Karteireiter klicken und einen Dateinamen aus dem Einblendmenü wählen (dies ist nützlich, wenn alle Karteireiter nicht sofort sichtbar sind). Einige Arbeitsumgebungen haben eventuell diese Tastenkombinationen zugewiesen. In diesem Fall müssen Sie diese (nicht in Anjuta) anders belegen, wenn Sie sie in Anjuta verwenden möchten.
+Kontexthilfe: UmschaltF1. Bewegen Sie die Eingabemarke über das Wort (z.B. ein Funktionsname), für das Sie die API-Hilfe aufrufen möchten, und verwenden Sie diese Tastenkombination. Die Kontexthilfe funktioniert nur, wenn Devhelp installiert ist; Andernfalls sind das Menü Kontexthilfe und der Knopf in der Werkzeugleiste deaktiviert. Sie können Devhelp von der Devhelp-Webseite beziehen. Sie müssen dann auch die zugehörigen Devhelp-Bücher installieren.
+Automatische Vervollständigung: StrgEingabetaste. Positionieren Sie die Eingabemarke genau hinter ein unvollständiges Wort und verwenden Sie diese Tastenkombination. Eine Liste mit möglichen Vervollständigungen wird darauf hin eingeblendet. Sie können in der Liste blättern, um die gewünschte Ergänzung zu suchen und auszuwählen.
+Weitere Tastenkombinationen: Schauen Sie nach Tastenkombinationen, die rechts neben Menüeinträgen dargestellt sind. Tastenkombinationen können auch wie im Hinweis unten erklärt geändert werden.
+Tastenkürzel anpassen
+Tastenkombinationen können unter BearbeitenEinstellungen im Karteireiter Tastenkombinationen geändert werden.
+Hauptfenster
+Das Hauptfenster enthält mehrere Ansichtsfenster, die sich durch Ziehen ihrer jeweiligen Titelleiste neu anordnen lassen. Sie können auch durch den Knopf links auf ihrer Titelleiste minimiert werden.
+Das Dokumentenfenster hat jeweils nur ein Dokument aktiv (wenn Dateien geöffnet sind). Alle Dateibefehle wirken sich auf das aktive Dokument aus. Sie können zu jedem geöffneten Dokument durch einen Mausklick auf den jeweiligen Karteireiter wechseln. Sie können auch das gleiche tun, in dem Sie mit der rechten Maustaste auf einen beliebigen Karteireiter klicken und das gewünschte Dokument aus dem erscheinenden Einblendfenster wählen. Dies ist besonders dann nützlich, wenn viele Dateien geöffnet sind, aber nicht alle zugehörigen Dateireiter sichtbar sind.
+Das Projektfenster enthält den Baum der Projektdateien, wenn ein Projekt geöffnet ist. Andernfalls ist das Projektfenster normalerweise verborgen. Ein Doppelklick auf ein beliebiges Objekt im Projektfenster öffnet diese Datei.
+Das Dateifenster enthält einen Dateibaum. Falls kein Projekt geöffnet ist, so zeigt der Dateibaum normalerweise den obersten Ordner des Dateisystems. Dies kann aber in den Einstellungen angepasst werden. Wenn ein Projekt geöffnet ist, so werden im Fenster alle Dateien des Projekts angezeigt. Ein Doppelklick auf eine Datei öffnet diese mit der zugehörigen Anwendung, so wie es in den GNOME MIME-Einstellungen festgelegt ist. Ein Rechtsklick öffnet ein Kontextmenü, das Ihnen weitere Möglichkeiten zum Öffnen der Datei anbietet.
+Das Symbolfenster zeigt einen Baum der verfügbaren Symbole im Projekt, der durch Verarbeiten der ctags gebildet wird. Ein Doppelklick öffnet ein Editorfenster mit der jeweiligen Datei in der entsprechenden Zeile.
+Es gibt auch einen Suchreiter im Symbolfenster, wo Sie nach Symbolen suchen können.
+Das Nachrichtenfenster stellt alle Ausgaben dar (sowohl stdout als auch stderr) dar, wenn ein externer Befehl ausgeführt wird. Das Nachrichtenfenster ist normalerweise verborgen, wird aber bei Ausführung externer Befehle eingeblendet, wie z.B. beim Kompilieren einer Datei oder des Projekts, Fehleranalyse, Suche und vielen weiteren Vorgängen. Anjuta fügt auch bei Bedarf eigene Nachrichten hier ein.
+Die Farbverwendung bei der Darstellung ist von Bedeutung. Nachrichten in der voreingestellten Vordergrundfarbe (normalerweise schwarz) sind normale Nachrichten. Orange Nachrichten sind Warnungen, und rote repräsentieren Fehler. Warnungen und Fehlernachrichten sind verknüpft: Ein Doppelklick auf eine solche Nachricht öffnet die entsprechende Datei in der jeweiligen Zeilennummer.
+Wenn Sie zum Beispiel eine Datei kompilieren, die Fehler enthält, so werden rote Nachrichten die Probleme erläutern und auf die Fehlerstelle hinweisen. Ein Doppelklick auf eine solche Nachricht öffnet die Datei und hebt die Zeile mit dem Fehler hervor.
+Das Terminalfenster ist ein Terminal-Emulator, in dem Sie wie im GNOME-Terminal Befehle eingeben können.
+Sitzungsverwaltung
+Alle Einstellungen, einschließlich Fenstergrößen und -positionen, werden beim Beenden von Anjuta gespeichert. Eine Sitzungsverwaltung befindet sich noch in der Entwicklung, so dass Sie Anjuta nicht mit ungespeicherten Dokumenten beenden sollten. Anjuta wird Sie warnen, wenn Sie beenden wollen, während noch ungespeicherte Dokumente geöffnet sind.
+Dateioperationen
+Anlegen einer neuen Datei und Einfügen von Text
+Erstellen einer neuen Datei
+Um eine neue Datei anzulegen, wählen Sie DateiNeu in der Menüleiste, oder klicken Sie auf den Knopf Neue Datei in der Werkzeugleiste. Es wird daraufhin im Editor eine neue Seite angezeigt (oder ein neues Fenster, falls das übergeordnete Dokument??). Neue Dokumente werden Neue Datei 1, Neue Datei 2, Neue Datei 3 usw. benannt.
+Datei speichern
+Sie sollten neue Dokumente so bald wie möglich speichern, um Datenverluste in Folge von Abstürzen zu vermeiden.
+Datei-Assistent
+Erstellungsassistent für Dateien
+Der » Datei öffnen « -Dialog
+Ein Assistent kann auch dazu verwendet werden eine neue Datei zu erstellen. Wählen Sie dazu DateiNeuDatei aus der Menüleiste. Der Dialog » Neue Datei « wird geöffnet. Wählen Sie den Dateityp und geben Sie den Dateinamen ein. Die Endung wird automatisch hinzugefügt. Sie können Lizenzinformationen und einen Dateikopf hinzufügen. In Falle einer C / C + + -Kopfdatei können sie auch eine Kopfvorlage hinzufügen. Klicken Sie OK, um die Erstellung zu bestätigen.
+Anjuta erstellt gelegentlich während einiger Vorgänge neue Dateifenster. Zum Beispiel erzeugen einige Subversion-Vorgänge wie Diff und Protokoll ansehen neue Dateifenster und geben die Ausgaben dort aus. Sie können bei Bedarf den Inhalt dieser Fenster in Dateien abspeichern.
+Einfügen von Makros
+Sie können Makros verwenden, um schnell wiederholende Textpassagen zu bearbeiten.
+Das Makro-Plugin muss aktiviert sein.
+Einfügen
+Es gibt zwei Arten Makros: Anjuta-Makros und Benutzer-Makros (sie werden als » Meine Makros « angezeigt). Anjuta-Makros können nicht verändert werden, aber Sie können Benutzer-Makros erstellen und bearbeiten.
+Zum Einfügen eines Makros positionieren Sie die Eingabemarke an die gewünschte Stelle. Wählen Sie BearbeitenMakrosMakros …. Es wird ein Dialog geöffnet. Wählen Sie das gewünschte Makro aus der Liste. Das Ergebnis der Makro-Umsetzung wird im Fenster dargestellt und eine Zusammenfassung wird im Dialogfenster angezeigt. Wählen Sie Einfügen. Der umgesetzte Makrotext wird an der aktuellen Position der Eingabemarke eingefügt.
+Makro
+Der Makro-Dialog
+Eine andere Möglichkeit Makros einzufügen ist BearbeitenMakrosMakro einfügen … auszuwählen, und dann die gewünschte Makro-Tastenkombination zu drücken.
+Definieren von Makros
+Wählen Sie im Fenster » Makro einfügen « Hinzufügen oder wählen Sie BearbeitenMakrosMakro hinzufügen …. Daraufhin öffnet sich das Fenster » Hinzufügen / Bearbeiten «. Geben Sie den Namen des Makros ein, wählen oder definieren Sie eine Kategorie und legen Sie eine Tastenkombination fest. Bearbeiten Sie dann Text relativ zu Ihrem Makro. Das Zeichen » _ BAR _ « deutet die Position der Eingabemarke nach Ausführung des Makros an. Klicken Sie auf OK. Das Makro wird zur Liste hinzugefügt.
+Sie können auch ein Makro löschen, indem Sie es in der Liste auswählen und Entfernen klicken. Dies ist natürlich nur mit Benutzer-Makros (» Meine Makros «) möglich.
+Makro hinzufügen / bearbeiten
+Dialog zum Hinzufügen / Bearbeiten
+Auf ähnliche Weise können Sie ein Makro bearbeiten und ändern, indem Sie es in der Liste auswählen und Bearbeiten wählen.
+Makro-Schlüsselwörter
+Makro-Schlüsselwörter stehen zur Verfügung. Sie können in Makro-Definitionen eingebunden werden. Makro-Schlüsselwörter beginnen und enden jeweils mit dem Zeichen » @ «.
+Schlüsselwort-Makro
+Das Schlüsselwort-Makro
+Verfügbare Makro-Schlüsselwörter sind @ DATE _ TIME @, @ DATE _ YMD @, @ DATE _ Y @, @ USER _ NAME @, @ FILE _ NAME @, @ FILE _ NAME _ UP @, @ FILE _ NAME _ UP _ PREFIX @, @ EMAIL @, @ TABSIZE @, @ INDENTSIZE @, und @ USETABS @.
+Öffnen und Speichern von Dateien
+Dialog zum Öffnen von Dateien
+Eine Datei öffnen: Um eine bestehende Datei zu öffnen, wählen Sie DateiÖffnen aus der Menüleiste und klicken Sie auf den Knopf Öffnen, oder verwenden sie die Tastenkombination StrgO. Dies öffnet den Dialog Datei öffnen. Geben sie den Namen der Datei ein, die Sie öffnen wollen, oder wählen Sie sie aus. Klicken sie dann auf Öffnen. Um mehrere Dateien auf einmal zu öffnen können Sie mehrere nacheinander auswählen, indem Sie Strg gedrückt halten; Dann klicken sie auf Öffnen. Wenn Sie Ihre Meinung geändert haben, können sie Abbrechen drücken, um den Dialog zu schließen, ohne eine Datei zu öffnen.
+Dialog zum Öffnen mehrerer Dateien
+Der Dialog » Datei öffnen « im Modus für mehrere Dateien
+Sie können die Einstellung Verborgene Dateien zeigen im Einblendfenster aktivieren, das nach einem Rechtsklick im Dialog zum Öffnen von Dateien erscheint. Mit dieser Einstellung werden verborgene Dateien (ihr Name beginnt mit ». «) in der Dateiliste sichtbar. Nehmen Sie diese Einstellung zurück, um verborgene Dateien nicht anzuzeigen. Der Dialog zum Öffnen von Dateien besitzt auch einen eingebauten Typenfilter. Wählen Sie den entsprechenden Dateitypenfilter im Dialog, und die Dateiliste wird auf Dateien des gewählten Typs beschränkt.
+Als Datei speichern
+Speichern einer Datei: Wählen Sie zum Speichern einer Datei DateiSpeichern aus der Menüzeile und klicken auf den Knopf Speichern in der Werkzeugleiste, oder drücken StrgS. Falls die Datei neu ist, wird der Dialog Speichern unter geöffnet. Geben Sie einen Dateinamen ein und klicken Sie auf Speichern, um die neue Datei unter dem angegebenen Namen abzuspeichern.
+Automatisches Speichern einer Datei
+Wenn automatisches Speichern aktiviert ist, so speichert Anjuta nicht automatisch neue Dateien. Sie müssen diese zunächst selbst speichern. Das gleiche gilt für die Einstellung Alle speichern: Anjuta speichert nicht neue Dateien, solange Sie diese noch nicht selbst gespeichert haben. Sie müssen zuerst eine Datei selbst speichern, bevor automatisches Speichern oder Alle speichern mit diesen funktioniert.
+Eine Datei unter anderem Namen speichern: Sie können explizit eine Datei unter einem neuen Namen speichern. Wählen Sie dazu DateiSpeichern unter aus der Menüzeile. Der Dialog Datei speichern unter wird geöffnet und fragt Sie nach dem neuen Dateinamen. Geben Sie den Namen ein und klicken Sie auf Speichern.
+Datei beim Speichern überschreiben
+Wenn Sie Speichern unter mit einer bestehenden Datei verwenden, so wird das Original nicht gelöscht. Es verbleibt seit dem letzten Speichern unverändert. Falls eine Datei mit dem neuen Dateinamen bereits besteht, dann wird ein Bestätigungsdialog angezeigt, um sicherzustellen, dass Sie sie überschreiben wollen. Mit einem Klick auf Ja wird die Datei mit derjenigen überschrieben, die Sie speichern.
+Eine Datei schließen: Wählen Sie zum Schließen einer Datei DateiSchließen aus der Menüzeile, oder klicken Sie auf den Knopf Schließen in der Werkzeugleiste (Sie können eine Datei auch durch Klick auf das Kreuz (» X «) im Reiter zum Dateinamen schließen.). So wird die aktuelle Datei geschlossen. Falls die Datei neu oder nicht gespeichert ist, so wird Anjuta nachfragen, ob die Datei vor dem Schließen gespeichert werden soll.
+Bearbeiten von Dateien
+Anjuta verfügt über eine Reihe von Funktionsmerkmalen, die Ihnen beim Bearbeiten von Quelldateien helfen. Die folgenden abschnitte beschreiben, wie einige der interessanten Funktionsmerkmale verwendet werden.
+Editorränder
+Die Werkzeugleiste für Beschriftungen
+Editorränder: Editorränder befinden sich links des Editors und werden für einige bestimmte Zwecke verwendet. Es stehen drei Editorränder zur Verfügung: Der Zeilennummernrand, der Markierungsrand und der Rand für Textfaltungen. Per Voreinstellung (das heißt beim ersten Start von Anjuta) ist nur der Rand für Textfaltungen sichtbar. Die anderen beiden können über das Menü AnsichtEditor sichtbar geschaltet werden.
+DerRand für Zeilennummern ist der größte aller drei Ränder (und etwas dunkler als die anderen) und gibt die Zeilennummern eines Dokumentes an. Der Rand für Zeilennummern kann über den Menüpunkt AnsichtEditorRand für Zeilennummern angezeigt oder verborgen werden. Ein Linksklick auf den Rand markiert eine ganze Zeile (einschließlich des Zeilenumbruchs, sofern vorhanden). Sie können eine Schriftart für den Zeilennummernrand in den Einstellungen festlegen.
+Der Markierungsrand kann über den Menüpunkt AnsichtEditorMarkierungsrand verborgen und angezeigt werden. Dieser Rand zeigt grafische Symbole zur Markierung einer Zeile. Der Rand kann Markierungen für Lesezeichen (blau und rechteckig), für Haltepunkte (rot und rund) sowie Zeilenangaben enthalten (gelber spitzer Pfeil). Eine Markierung für Lesezeichen deutet eine Zeile mit Lesezeichen an und kann über das Menü Gehe zuLesezeichen Lesezeichen an / aus ein- und ausgeschaltet werden, sofern sich die Eingabemarke in dieser Zeile befindet. Eine Markierung für Haltepunkte wird bei der Fehlerdiagnose verwendet, um einen Haltepunkt festzulegen (lesen Sie den Abschnitt Fehlerdiagnose für weitere Informationen). Eine Markierung für Zeilennummern gibt die aktuelle Programmposition während der Fehlerdiagnose an.
+Der Textfaltungsrand enthält gegebenenfalls den Faltungsbaum. Ein Klick auf Knoten im Faltungsbaum klappt Code-Blöcke ein oder aus. Es wird ein Unterstrich unter einer eingeklappten Zeile angezeigt, um zu verdeutlichen, dass ein Code-Block unter der Zeile eingeklappt wurde. Lesen Sie für weitere Informationen zum Falten den Abschnitt Textfaltung weiter unten.
+Verborgener Markierungsrand
+Editorränder im Falle unsichtbarer Markierungsränder
+Falls der Markierungsrand nicht sichtbar ist, zeigt Anjuta Markierungen als Hintergrundfarbe einer Zeile an. Wenn zum Beispiel eine Markierung eines Haltepunkts für eine Zeile gesetzt ist und der Markierungsrand nicht sichtbar ist, so wird diese Zeile mit einem roten Hintergrund dargestellt. Ähnlich wird für ein Lesezeichen und eine Zeilennummernmarkierung die Hintergrundfarbe tiefblau bzw. gelb sein. Wenn Ihnen dies nicht gefällt (eventuell. im Zusammenspiel mit dem aktuell verwendeten Thema), so können Sie den Markierungsrand im Menü AnsichtEditorMarkierungsrand einschalten.
+Bearbeitungshilfen
+Editor mit Bearbeitungshilfen
+Syntaxhervorhebung
+Anjuta kann die Syntax von vielen verschiedenen Sprachen hervorheben. Dies geschieht normalerweise automatisch durch Erkennung der Dateiart anhand der Erweiterung. Falls Anjuta einen Dateityp nicht erkennen kann, dann wird keine Syntaxhervorhebung eingesetzt. Sie können explizit einen Hervorhebungsmodus erzwingen, indem Sie den Stil im Menü AnsichtEditor Hervorhebungsmodus wählen.
+Anjuta verwendet eine Eigenschaftendatei mit dem Namen $prefix / share / anjuta / properties / anjuta.properties, die das gleiche Format wie eine SciTE-Eigenschaftendatei besitzt, aber nicht alle Eigenschaften verwendet. Der Stil jedes Elements für alle Sprachen ist in der Datei $prefix / share / anjuta / properties / styles.properties hinterlegt. Sie verwendet einige gewöhnliche Eigenschaften, die von Anjuta in der Datei $home / .config / anjuta / scintilla / editor-style.properties festgelegt sind.
+Textfaltung
+Anjuta kann Code-Faltungen für Quelldateien mit in Blöcken strukturierten Sprachen (wie C, C + +, Pascal, und Java) anzeigen. Alle Code-Blöcke in Quelldateien können ein- und ausgeklappt werden, indem auf die Faltungspunkte im Rand für Code-Faltung des Editor-fensters geklickt wird (normalerweise ein » + / - « - Symbol oder ein Pfeil nach oben / unten). Die Faltungspunkte erscheinen automatisch in Quelldateien, die Code-Blöcke enthalten.
+Code-Faltung ist besonders nützlich beim Bearbeiten von sehr großen Quelldateien mit tausenden Zeilen. Sobald Teile eingeklappt sind, scheint ein Dokument kleiner zu sein, und einfaches Durchsuchen und Bearbeiten werden möglich.
+Bitte beachten Sie, dass Code-Faltung und Bearbeitungshilfen nur im Scintilla-Editor verfügbar sind.
+Automatische Formatierung von Quelltext
+Anjuta kann C- oder C + + -Quelldateien oder Header-Dateien automatisch formatieren (automatisch einrücken). Dies ermöglicht eine gute Übersicht über den Quellcode, verbessert die Lesbarkeit, reduziert die Wahrscheinlichkeit von Syntaxfehlern und spart vor allem Zeit. Zum automatischen Einrücken wählen Sie BearbeitenAutomatisches Einrücken in der Menüzeile. Sie können den Stil der Formatierung in den Einstellungen selbst anpassen.
+Sie können C- und C + + -Quelldateien und -Headerdateien anhand von tags?? in den Dateien durchsuchen. A tag (oder Symbol) refers to a named entity such as a function definition, structure, or macro. Anjuta durchsucht offene C-und C + + -Quelldateien und Header-Dateien nach vorhandenen tags.
+Symbol-Browser
+Anjuta sucht automatisch nach tags in allen Quell- und Header-Dateien eines geöffneten Projekts. Sie können zu jeder Funktionsdefinition, Strukturdefinition, Klassendefinition oder anderen tags springen, ohne die entsprechende Datei zuvor zu öffnen. Sie müssen auch gar nicht wissen, in welcher Datei der Tag gefunden wurde. Der Symbol-Browser listet alle im Projekt verfügbaren Symbole auf.
+Tag-Abgleich
+Sie müssen sich nicht um Abgleich und Aktualisierung der Tag-Datenbank kümmern. Anjuta übernimmt dies alles. Sie müssen lediglich entscheiden, welche Tags sie anspringen möchten!
+Suchen und Ersetzen von Text in Dateien
+Suchen
+Um nach einer Zeichenkette oder einem regulären Ausdruck in der aktuellen Datei zu suchen, wählen Sie BearbeitenSuchenFinden oder drücken Sie StrgAltF. Daraufhin wird der Dialog Finden geöffnet.
+Geben Sie die zu suchende Zeichenkette in das Feld ein und wählen Sie, ob es eine normale Zeichenkette oder ein regulärer Ausdruck ist. Sie können auch die Suchrichtung, die Beachtung von Groß- / Kleinschreibung und den Suchbereich festlegen. Klicken Sie zum Starten der Suche auf Suchen.
+Bei erfolgreicher Suche springt Anjuta den Suchtreffer an oder führt eine weitere Aktion aus (entsprechend der Suchaktion, die Sie im Reiter Suchziel gewählt haben). Wenn die Suche ohne Erfolg blieb, wird Anjuta eine Nachricht anzeigen, die darüber informiert.
+Wenn Sie die Suche fortsetzen möchten, klicken Sie auf den Knopf Suchen ein weiteres Mal oder drücken Sie StrgG. So wird der nächste Suchtreffer aufgesucht (Verwenden Sie UmschaltStrgG für den vorhergehenden Suchtreffer). Sie können den Suchtext ändern, indem Sie die neue Zeichenkette in das Textfeld Suchausdruck im Suchdialog eingeben.
+Dialog » Suchtext «
+Drücken Sie zum Anhalten einer langen Suche den Knopf Stopp.
+Festlegen des Suchbereichs
+Legen Sie im Reiter Suchziel den Suchbereich und die Aktion fest, die im Falle eines Sucherfolgs ausgeführt werden soll.
+Sie können die maximale Anzahl der auszuführenden Aktionen festlegen.
+Dialog » Suchziel «
+Sie können wählen, nach welchem Text gesucht werden soll.
+Auswahlmöglichkeiten für » Suchen in «
+Suchen in Dateien
+Setzen Sie zur Textsuche in Ihrem Projekt Suchen in auf » Alle Projektdateien «.
+Geben Sie im Reiter Suchausdruck den zu suchenden Text ein und legen Sie die Sucheinstellungen fest, wie z.B. Groß- / Kleinschreibung berücksichtigen oder Nur vollständige Wörter berücksichtigen. Starten Sie die Suche mit Suchen.
+Verwenden Sie zum Suchen von Text in mehreren Dateien das Feld Suchen in zur Eingabe von Dateimustern. Legen Sie die Suchvariablen fest. Klicken Sie anschließen zum Start der Suche auf Suchen.
+Dateisuchmuster
+Einen Suchvorgang angeben
+Sie können auswählen welche Aktion bei erfolgreicher Suche ausgeführt werden soll.
+Abhängig von der vorherigen Auswahl (Suche in, Suchrichtung usw.) stehen einige Vorgänge nicht zur Verfügung.
+Auswahlmöglichkeiten für die Aktion » Suchziel «
+Ersetzen
+Suchen und Ersetzen ist vergleichbar mit der Textsuche, mit dem Unterschied, dass Sie auch den Ersatztext im Textfeld Ersetzen durch eingeben können. Und Sie können auch festlegen, ob Sie vor jeder Ersetzung gefragt werden möchten (» Ersten Treffer ersetzen « und » Alle Treffer ersetzen «).
+Wählen Sie Ersetzen zum Ersetzen der Übereinstimmung oder Weiter, um zur nächsten Übereinstimmung zu gelangen.
+Sucheinstellungen
+Sie können Suchoptionen auch speichern.
+Das in rot hervorgehobene Objekt ist das aktive. Das vorausgewählte Objekt gibt Sucheinstellungen vor, die beim Start von Anjuta geladen werden.
+Dialog zu den Sucheinstellungen
+Drucken einer Datei
+Druckvorschau für eine C-Datei
+Druckvorschau
+Sie können die Druckvorschau mit DateiDruckvorschau aufrufen. Die aktuelle Datei wird abgebildet und eine Druckvorschau angezeigt. Im Editor hervorgehobener Quelltext wird auch ähnlich in der Vorschau hervorgehoben (und im Ausdruck). Der Reiter Drucken in den Einstellungen der Editor-Plugins weitere Einstellungen, die den Ausdruck mit Zeilennummern, umgebrochenen Zeilen und / oder Headern ermöglichen.
+Druckeinstellungen
+Wenn Sie nun drucken möchten und mit der Vorschau zufrieden sind, wählen Sie DateiDrucken oder Drucken im Vorschaufenster. Der unten gezeigte Druckdialog wird daraufhin geöffnet. Wählen Sie die passenden Druckeinstellungen und klicken Sie zum Drucken der Datei auf Drucken.
+Sie können auch Hoch- oder Querformat, Papiergröße, Seitenorientierung und Papiertyp festlegen. Vergessen Sie nicht die richtigen Einstellungen für Ihren Drucker zu treffen, da andernfalls der Ausdruck nicht wie erwartet sein kann.
+Druckdialog
+Anjuta verfügt über ein mächtiges Plugin zur Projektverwaltung, das die meisten auf automake / autoconf basierenden Projekte öffnen kann. In einigen ungewöhnlich konfigurierten Projekten kann es fehlschlagen, aber solange das Projekt automake / autoconf auf typische Weise verwendet, sollte es funktionieren.
+Das vorteilhafte ist, dass Anjuta nichts zusätzlich zu den in der Projektstruktur hinterlegten Projektinformationen speichert. Das heißt, es gibt keine separaten Projektdaten von Anjuta, und alle Projektarbeiten geschehen direkt in der Projektstruktur. So ist es möglich, das Projekt ohne Anjuta zu verwalten und zu entwickeln, ohne den Zwang, zu einem Anjuta-eigenen Format umwandeln zu müssen. Technisch betrachtet sind Anjuta-Projekte automake-Projekte, und so ist gemischte Entwicklung (mit und ohne Anjuta-Anwender) als auch der Wechsel zwischen Entwicklungsplattformen ohne Hindernisse möglich.
+Erstellen eines Projekts aus einer Vorlage
+Zum Erstellen eines neuen Projekts wählen Sie den Menüpunkt DateiNeuProjekt …, um so den Projekt-Assistenten zu starten. Lesen Sie die erste Seite sorgsam. Klicken Sie auf Vor, um fortzusetzen.
+WÄhlen Sie die Art der zu erstellenden Anwendung auf der zweiten Seite. Klicken Sie auf Vor, um fortzusetzen.
+Im letzten Schritt sollen Sie die eingegebenen Informationen prüfen. Klicken Sie zur Erstellung des Projekts auf Beenden.
+Sobald das Projekt erstellt wurde, können Sie es testen und es erstellen oder ausführen.
+Der Importiervorgang funktioniert nur, wenn das bestehende Projekt autoconf / automake oder in gewissem Rahmen ein Makefile verwendet.
+Laden und Speichern von Projekten
+Laden von Projekten
+Um ein Projekt zu öffnen, wählen Sie DateiÖffnen …. Wählen Sie die Projektdatei (* .anjuta) im Dialog aus und klicken Sie auf OK.
+Wenn ein Projekt jüngst geöffnet wurde, dann finden Sie es im Menü DateiZuletzt geöffnet. Wählen Sie den Dateinamen des Projekts aus der Liste, und das Projekt wird geöffnet.
+Speichern von Projekten
+Das Projekt wird beim Schließen automatisch gespeichert, weil alle Änderungen direkt in der Projektstruktur vorgenommen werden.
+Projektstruktur
+Projektfenster
+Das Projektfenster
+Gruppen und Ziele
+Hinzufügen von Gruppen
+Wählen Sie ProjektGruppe hinzufügen … und ein Dialog zum Hinzufügen neuer Gruppen erscheint.
+Wählen Sie die Gruppe, innerhalb der die neue Gruppe hinzugefügt werden soll.
+Geben Sie den namen der neuen Gruppe ein und klicken Sie auf Hinzufügen.
+So fügen Sie eine neue Gruppe hinzu (die einem Ordner in automake-Projekten entspricht):
+In Automake-Projekten wird ein neuer Ordner mit dem angegebenen Namen im Ordner der übergeordneten Gruppe erstellt.
+Entfernen von Gruppen
+Klicken Sie mit der rechten Maustaste auf die Gruppe in der Ansicht Projektverwaltung.
+Wählen Sie Entfernen im Kontextmenü.
+So entfernen Sie eine Gruppe:
+Wählen Sie den Zieltyp.
+So fügen Sie ein neues Ziel hinzu:
+Entfernen von Zielen
+So entfernen Sie ein Ziel:
+Hinzufügen und Entfernen von Dateien
+Entfernen von Quelldateien
+Ein Bestätigungsdialog wird geöffnet, und die Datei wird aus dem Projekt entfernt.
+Die Datei wurde nicht entfernt!
+Die Datei wird nicht aus dem Dateisystem entfernt. Sie ist noch vorhanden, und Sie können Sie später wieder hinzufügen, falls gewünscht. Die Datei wird nur aus der Projektliste entfernt und wird für Projektoperationen wie Kompilieren, Erstellen oder Veröffentlichen von Distributionspaketen nicht mehr berücksichtigt.
+$(prefix): Das Installationspräfix. Das Projekt wird in verschiedenen Unterordnern unter diesem Präfix installiert. Vorgabe ist / usr / local.
+$(bindir): Der Installationsordner für ausführbare Dateien. Alle Ihre ausführbaren Dateien und Skripte werden in diesen Ordner installiert. Vorgabe ist $(prefix) / bin.
+$(libdir): Der Installationsordner für Bibliotheken. Alle Ihre Bibliotheken (sowohl gemeinsame als auch statische) werden in diesen Ordner oder in einen Unterordner davon installiert. Vorgabe ist $(prefix) / lib.
+Einige der am häufigsten vorkommenden Variablen werden hier aufgelistet. Eine vollständige Liste finden Sie in der Infoseite zu automake.
+Projekteigenschaften
+Eigenschaften-Dialog für Projekte
+Gruppeneigenschaften
+Eigenschaften-Dialog für Gruppen
+Eigenschaften-Dialog für Ziele
+Kompilieren und Erstellen
+Kompilieren einer Datei
+Weitere Operationen
+Installieren eines Projekts
+Systemweite Installation
+Die Befehlszeilenparameter
+Der Arbeitsordner
+Umgebungsvariablen
+Aktuelle Umgebungsvariablen werden hier in Hellgrau dargestellt. Sie können hier Umgebungsvariablen hinzufügen, ändern oder löschen.
+Hinzufügen von Quellordnern
+Ausführung
+Ausführen / Fortsetzen
+Protokoll a _ nsehe
+Ort
+Adresse
+Typ
+Bedingung
+Status
+Dateiname: Zeilennummer
+Funktionsname
+Datei: Funktionsname
+Ausdrücke
+Auflisten lokaler Variablen
+Stacktrace
+Stack-Fenster
+Thread
+Thread-Fenster
+CPU
+Sonstige
+Dynamisch geladene Bibliotheken
+Kernelsignale
+Kernelsignale-Fenster
+Informationen über benutzte Dateien
+Informationen über die Kernelstruktur
+Informationen über globale Variablen
+Informationen über die aktuellen Funktionsargumente
+Benutzerbefehl
+Schnellstart
+Allgemeine Fragen zur Benutzung von Glade
+Widget-Name
+Vorgegebenes Signal
+Einstellungen
+Automatisch Ressourcen hinzufügen
+Vorlage für Handler
+Allgemein
+Dateimanager
+Benutzerdefinierte Werkzeuge
+Das Werkzeug-Plugin muss aktiviert sein, um diese Funktion nutzen zu können.
+Werkzeug-Beispiele
+Das ist ein einfaches Beispiel, wie man das Werkzeug-Plugin verwenden kann, um das Generierungsskript für GNOME-Änderungsprotokolle einzubauen.
+Der Werkzeugeditor
+Autoren
+Das Anjuta-Projekt wurde von Naba Kumar begründet. Auf dieser Seite finden Sie alle Anjuta-Mitwirkenden.
+Besuchen sie die Projekt Internet-Seite http: / / anjuta.org für weitere Informationen zu Anjuta. Fehler sollten im Fehlererfassungssystem auf der Entwicklungsseite zum Projekt http: / / www.sourceforge.net / projects / anjuta gemeldet werden.
+Dieses Handbuch wurde von Naba Kumar, Andy Piper, Biswapesh Chattopadhyay und Johannes Schmid geschrieben. Bitte senden Sie alle Vorschläge und Kommentare, die dieses Handbuch betreffen, an die Anjuta Devel-Mailing-Liste anjuta-devel-list @ gnome.org. Es können auch Kommentare auf der Projektseite auf SourceForge abgegeben werden.
+Lizenz
+Dieses Programm ist freie Software; Sie können es weiterverbreiten und / oder ändern unter den Bedingungen der GNU General Public License wie sie von der Free Software Foundation veröffentlicht wurde; entweder in Version 2 der Lizenz oder (nach Ihrer Wahl) jeder neueren Version.
+Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, dass es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in der GNU General Public License.
+Eine Kopie der GNU General Public License ist im Anhang des GNOME Benutzerhandbuchs enthalten. Sie können außerdem eine Kopie der GNU General Public License von der Free Software Foundation erhalten, indem Sie auf ihre Internetseite gehen oder an die Free Software Foundation, Inc.51 Franklin Street, Fifth FloorBoston, MA02111-1301USA schreiben.
+Anjuta
+Integrierte Entwicklungsumgebung
+Software in einer integrierten Umgebung entwickeln
+IDE; Entwicklung; Programmierung;
+Autogen ist beschäftigt
+Definitionsdatei »% s « konnte nicht gespeichert werden:% s
+Datei »% s « konnte nicht geöffnet werden:% s
+Text
+Text, der dargestellt werden soll
+Pixbuf-Objekt
+Der Pixbuf, der dargestellt werden soll.
+Die Komponente »% s « kann nicht gefunden werden
+Die Registrierungsfunktion »% s « der Komponente »% s « konnte nicht gefunden werden
+Unbekannter Fehler in Modul »% s «
+Spalte% i
+Spalte 1
+Die zu öffnende Datei enthält eine ungültige Byte-Reihenfolge.
+Anjuta konnte nicht automatisch die Zeichenkodierung der zu öffnenden Datei bestimmen.
+Fehlender Ort für Komponente »% s «
+Fehlende Typdefinition von Komponente »% s «
+Registrierung von Typ% s durch Komponente% s fehlgeschlagen
+Unicode
+Westlich
+Mitteleuropäisch
+Südeuropäisch
+Baltisch
+Kyrillisch
+Arabisch
+Griechisch
+Hebräisch (Lautschrift)
+Hebräisch
+Türkisch
+Nordeuropäisch
+Keltisch
+Rumänisch
+Armenisch
+Chinesisch (traditionell)
+Kyrillisch / Russisch
+Japanisch
+Koreanisch
+Chinesisch (vereinfacht)
+Georgisch
+Kyrillisch / Ukrainisch
+Vietnamesisch
+Thai
+Unbekannt
+Hilfetext
+Dem Benutzer für die Eingabe in diesem Feld anzuzeigender Text
+Umgebungsvariablen:
+Name
+Wert
+Pfad, auf den sich abgelegte Dateien beziehen
+Eine Datei ablegen oder hier den Pfad eingeben
+Dateien auswählen
+Pfad, auf den sich alle Dateien in der Liste beziehen
+Hinzufügen-Knopf anzeigen
+Einen Hinzufügen-Knopf anzeigensu "and the" sudossh
+Passwort. *:
+Befehl kann nicht ausgeführt werden: »% s «
+» execvp « fehlgeschlagen
+Anjuta-Shell
+Die Anjuta-Shell, die die Komponente enthalten wird
+Komponente »% s « lehnt die Deaktivierung ab
+% s konnte nicht geladen werden. Dies bedeutet oftmals, dass Ihre Installation beschädigt ist. Die Fehlermeldung hierzu lautete:% s
+Laden
+Verfügbare Komponenten
+Bevorzugte Komponenten
+Nur Komponenten zeigen, die vom Benutzer aktiviert werden können
+Hier werden die Komponenten angezeigt, die der Benutzer als bevorzugte für eine bestimmte Aufgabe ausgewählt hat. Wird hier eine Komponente entfernt, wird Anjuta das nächste Mal wieder einen Auswahldialog anzeigen.
+Ausgewählte Komponente verwerfen
+Komponente auswählen
+Bitte wählen Sie die zu aktivierende Komponente aus
+Keine Komponente kann andere Komponenten in% s laden
+Bitte wählen Sie die zu aktivierende Komponente aus
+Diese Auswahl merken
+Profile
+Aktueller Profil-Stapel
+Verfügbare Komponenten
+Verfügbare Komponenten, die in Komponenten-Ordnern gefunden wurden.
+Aktivierte Komponenten
+Derzeit aktivierte Komponenten
+Die Anjuta-Shell, für welche die Komponenten erstellt sind
+Status von Anjuta
+Status von Anjuta, der zum Laden und Entladen der Komponenten benutzt wird
+Laden:
+Kategory
+Allgemein
+Anjuta Einstellungen
+Komponenten-Verwaltung
+Die Komponentenverwaltung, die verwendet werden soll
+Profilname
+Name des Komponenten-Profils
+Datei zum Abgleichen
+Datei zum Abgleichen des XML-Profils
+Bitte wählen Sie eine Komponente aus der Liste aus
+»% s « konnte nicht gelesen werden: XML-Verarbeitungsfehler. Ungültiges oder beschädigtes Anjuta-Komponenten-Profil.
+% s: Wird aus »% s « installiert
+»% s « konnte nicht gelesen werden. Die folgenden benötigten Komponenten fehlen
+Die zu speichernden Objekte auswählen:
+Wenn nicht gespeichert wird, gehen alle Änderungen verloren.
+Speichern
+Objekt
+Änderungen _ verwerfen
+Es gibt ein geändertes Objekt. Soll es vor dem Schließen gespeichert werden?
+% 2 muss mindestens ein% 1-Kindelement haben.
+Der Wert des Attributs% 1 des Elements% 2 kann nur% 3 oder% 4 sein, nicht jedoch% 5.
+Das Element% 1 muss mindestens eines der Attribute% 2 oder% 3 haben.
+Vor% 2 muss mindestens ein% 1-Element stehen.
+Das Element% 1 muss mindestens eines der Attribute% 2 oder% 3 haben.
+Das Element% 1 muss entweder ein% 2-Attribut haben oder es muss ein Sequenzkonstruktor verwendet werden.
+QXml
+Interne allgemeine EntitÃ ¤t-Referenz ist nicht zulÃ ¤ssig in der DTD
+Das Element% 1 darf nicht an dieser Stelle stehen.
+Der Wert des Attributs% 1 des Elements% 2 kann nur% 3 oder% 4 sein, nicht jedoch% 5.
+Das Element% 1 kann keine Kindelemente haben.
+Attribut neu definiert.
+% 1: bereits vorhanden
+Attribut neu definiert.
+AktualisierenQSql
+Diesen Eintrag lÃ ¶ schen? QSql
+Ã  nderungen speichern? QSql
+BestÃ ¤tigenQSql
+Ã  nderungen verwerfen?
+Voreinstellungen
+% 1,% 2 nicht definiert
+Mehrdeutige% 1 nicht verarbeitet
+Operation durch Benutzer unterbrochen
+Zeile aufwÃ ¤rts
+Benutzerdefiniert...
+Mehr...
+SSL-Kontext kann nicht erstellt werden (% 1)
+UngÃ ¼ ltige oder leere VerschlÃ ¼ sselungsliste (% 1)
+Es kann kein Zertifikat ohne SchlÃ ¼ ssel bereitgestellt werden,% 1
+Fehler beim Laden des lokalen Zertifikats,% 1
+Fehler beim Laden des privaten SchlÃ ¼ ssels,% 1
+Privater SchlÃ ¼ ssel zertifiziert den Ã ¶ ffentlichen SchlÃ ¼ ssel nicht (% 1)
+SSL-Sitzung kann nicht erzeugt werden,% 1
+SSL-Sitzung kann nicht erzeugt werden:% 1
+Schreiben nicht mÃ ¶ glich:% 1
+Lesefehler:% 1
+Fehler bei der SSL-Aushandlung:% 1QNativeSocketEngine
+Netzwerkfehler
+Der Name% 1 referenziert keinen Schema-Typ.
+Es kann kein geeigneter Proxy-Server gefunden werden
+% 1 kann nicht geÃ ¶ ffnet werden: Es handelt sich um einen Ordner.
+Die Anmeldung an% 1 ist fehlgeschlagen: Authentifizierung erforderlich.
+Fehler beim Herunterladen von% 1:% 2
+Fehler beim Hochladen von% 1:% 2
+Operation nicht unterstÃ ¼ tzt fÃ ¼ r% 1
+UngÃ ¼ ltige URI:% 1QNetworkReply
+Protokollâ  % 1â   ist unbekannt
+Operation abgebrochen.QNetworkAccessFileBackend
+Anfrage zum Ã  ffnen einer nicht-lokalen Datei% 1QNetworkAccessFileBackend
+% 1 kann nicht geÃ ¶ ffnet werden: Pfad ist ein OrdnerQNetworkAccessFileBackend
+Fehler beim Ã  ffnen von% 1:% 2
+Fehler beim Schreiben in% 1:% 2QNetworkAccessFileBackend
+Socketfehler auf% 1:% 2
+Die entfernte Gegenstelle hat die Verbindung vorzeitig beendet (% 1) QNetworkAccessCacheBackend
+Fehler beim Ã  ffnen von% 1QNetworkReply
+Fehler beim Herunterladen von% 1 - Serverantwort:% 2QNetworkAccessFileBackend
+Fehler beim Lesen von% 1:% 2
+Es wurde kein Hostname angegeben
+UngÃ ¼ ltiger Dateiname
+Unbekannter Adresstyp
+Rechner nicht gefundenQAbstractSocket
+Dieses System unterstÃ ¼ tzt kein IPv6
+Verbindung zum Proxy abgelehnt
+Verbindung zum Proxy vorzeitig beendet
+Proxy-Rechner nicht gefunden
+Wartezeit fÃ ¼ r Verbindung zum Proxy abgelaufen
+Proxy-Authentifizierung fehlgeschlagen
+Proxy-Authentifizierung fehlgeschlagen:% 1
+Protokollfehler in SOCKS Version 5
+Allgemeiner SOCKSv5-Serverfehler
+Der SOCKSv5-Server hat die Verbindung verweigert
+Netzwerk nicht erreichbarQNativeSocketEngine
+Verbindung abgelehntQNativeSocketEngine
+TTL abgelaufen
+SOCKSv5-Befehl wird nicht unterstÃ ¼ tzt
+Adresstyp wird nicht unterstÃ ¼ tzt
+Unbekannter SOCKSv5-Fehlercode 0x% 1QSocks5SocketEngine
+Wartezeit fÃ ¼ r Netzwerkoperation abgelaufenQNativeSocketEngine
+Diese Socket-Operation wird nicht unterstÃ ¼ tztQNativeSocketEngine
+Nicht-blockierender Socket kann nicht initialisiert werdenQNativeSocketEngine
+Broadcast-Socket kann nicht initialisiert werdenQNativeSocketEngine
+Es wurde versucht, einen IPv6-Socket auf einem System ohne IPv6-UnterstÃ ¼ tzung zu verwenden.QNativeSocketEngine
+Die Gegenstelle hat die Verbindung beendetQSocks5SocketEngine
+Nicht genÃ ¼ gend Ressourcen verfÃ ¼ gbarQNativeSocketEngine
+Socket-Operation wird nicht unterstÃ ¼ tztQNativeSocketEngine
+Protokolltyp wird nicht unterstÃ ¼ tztQNativeSocketEngine
+UngÃ ¼ ltige Socket-BeschreibungQNativeSocketEngine
+Rechner nicht erreichbarQIODevice
+Wartezeit fÃ ¼ r Verbindung abgelaufenQNativeSocketEngine
+Die gebundene Adresse wird bereits verwendetQNativeSocketEngine
+Die Adresse ist nicht verfÃ ¼ gbarQNativeSocketEngine
+Die Adresse ist geschÃ ¼ tztQNativeSocketEngine
+Datagramm ist zu groÃ  zum SendenQNativeSocketEngine
+Es kann keine Nachricht versendet werdenQNativeSocketEngine
+Es kann keine Nachricht empfangen werdenQNativeSocketEngine
+Schreiben nicht mÃ ¶ glichQNativeSocketEngine
+NetzwerkfehlerQNativeSocketEngine
+Ein anderer Socket belegt bereits den gleichen PortQNativeSocketEngine
+Operation auf einem Nicht-SocketQNativeSocketEngine
+Der Proxytyp ist fÃ ¼ r diese Operation ungÃ ¼ ltig
+Wartezeit fÃ ¼ r Socket-Operation ist abgelaufen
+Socket ist nicht verbunden
+Gehe zu Zeile
+Zeile:
+Interrupt
+Umschalt + F5
+F5
+Einzelschritt
+F11
+Ã  berspringen
+F10
+Funktion verlassen
+Umschalt + F11
+Ab Cursorposition
+Strg + F10
+Bis zu neuem Skript ausfÃ ¼ hren
+Haltepunkt umschalten
+F9
+Debuggerausgabe lÃ ¶ schen
+Fehlerprotokoll leeren
+Konsole leeren
+In Skript & suchen...
+Strg + F
+& Weitersuchen
+F3
+FrÃ ¼ here suchen
+Umschalt + F3
+Strg + G
+Debug
+ZurÃ ¼ ck
+Weiter
+GroÃ  - / Kleinschreibung beachten
+Ganze WÃ ¶ rter
+nbsp; Die Suche hat das Ende erreicht
+ID
+Adresse
+Bedingung
+Anzahl ignorierte
+Single-Shot
+Anzahl Treffer
+Neu
+Geladene Skripte
+Haltepunkte
+Aufrufstapel
+Lokale Variablen
+Konsole
+Debuggerausgabe
+Fehlerprotokoll
+Qt Skript-Debugger
+Ebene
+Haltepunkt deaktivieren
+Haltepunkt aktivieren
+Bedingung fÃ ¼ r Haltepunkt:
+% 1: ftok fehlgeschlagen
+QNetworkAccessCacheBackend
+Fehler beim Ã  ffnen von% 1QNetworkAccessCacheBackend
+Fehler beim Ã  ffnen von% 1
+DebuggerausgabePhonon:: MMF
+Das Audioausgabe-GerÃ ¤tQNativeSocketEngine
+Protokolltyp wird nicht unterstÃ ¼ tzt
+Phonon:: MMF:: EffectFactory
+QShortcut
+Phonon:: MMF:: EffectFactory
+Weniger
+AusrichtungPhonon:: MMF:: EffectFactory
+Rechner nicht gefundenQNativeSocketEngine
+Nicht genÃ ¼ gend Ressourcen verfÃ ¼ gbar
+Adresstyp wird nicht unterstÃ ¼ tzt
+Underline context menu item
+Unterstrichen
+% 1: bereits vorhanden
+Rechner nicht gefunden
+EinfÃ ¼ gen
+QIODevice
+Zugriff verweigertQIBaseResult
+NÃ ¤chstes Element kann nicht geholt werden
+Socket ist nicht verbunden
+Netzwerk nicht erreichbarQNativeSocketEngine
+Netzwerkfehler
+Operation nicht unterstÃ ¼ tzt fÃ ¼ r% 1
+UngÃ ¼ ltiger Dateiname
+UngÃ ¼ ltige URI:% 1
+Parse-Fehler:% 1QNativeSocketEngine
+Protokolltyp wird nicht unterstÃ ¼ tzt
+Debuggerausgabe
+QNativeSocketEngine
+Netzwerkfehler
+QNativeSocketEngine
+Netzwerkfehler
+Unbekannter Fehler
+Die Wiedergabe kann nicht gestartet werden. PrÃ ¼ fen Sie bitte die Installation von GStreamer und stellen Sie sicher, dass das Modul libgstreamer-plugins-base installiert ist.
+Ein notwendiger Codec fehlt. Bitte installieren Sie folgende Codecs, damit die Wiedergabe funktioniert:% 0
+Die Medienquelle kann nicht geÃ ¶ ffnet werden.
+UngÃ ¼ ltiger Quellentyp.
+Die Medienquelle kann nicht gefunden werden.
+AudiogerÃ ¤t kann nicht geÃ ¶ ffnet werden. Es wird bereits verwendet.
+Die Medienquelle kann nicht dekodiert werden.
+Hinweis: Das Paket gstreamer0.10-plugins-good scheint nicht installiert zu sein. Daher wurden einige Video-Funktionen deaktiviert.
+Hinweis: Die grundlegenden GStreamer-Module scheinen nicht installiert zu sein. Daher wurden alle Audio- und Video-Funktionen deaktiviert.
+LautstÃ ¤rke:% 1%
+Verwenden Sie den Schieberegler zum Einstellen der LautstÃ ¤rke. Die Ã ¤uÃ  erste linke Position entspricht 0%, die rechte Position entspricht% 1%.
+Stumm
+ZurÃ ¼ ckschalten auf das GerÃ ¤tâ  % 1â   Phonon::
+BenachrichtigungenPhonon::
+KommunikationPhonon::
+SpielePhonon::
+Zugangshilfendefault label for Submit buttons in forms on web pages
+Absendendefault label for Reset buttons in forms on web pages
+Dies ist ein durchsuchbarer Index. Geben Sie StichwÃ ¶ rter ein: title for file button used in HTML forms
+Datei auswÃ  Â ¤hlentext to display in file button used in HTML forms when no file is selected
+Keine Datei ausgewÃ ¤hltOpen in New Window context menu item
+In neuem Fenster Ã  Â ¶ ffnenDownload Linked File context menu item
+VerknÃ ¼ pfung speichern unter... Copy Link context menu item
+VerknÃ ¼ pfung kopierenOpen Image in New Window context menu item
+Bild Ã ¶ ffnenDownload Image context menu item
+Bild speichernCopy Link context menu item
+Bild kopierenOpen Frame in New Window context menu item
+Rahmen Ã  Â ¶ ffnenCopy context menu item
+VorwÃ ¤rtsStop context menu item
+Keine VorschlÃ  Â ¤ge gefundenIgnore Spelling context menu item
+Zum WÃ ¶ rterbuch hinzufÃ ¼ genSearch The Web context menu item
+Im Internet suchenLook Up in Dictionary context menu item
+In WÃ ¶ rterbuch nachschlagenOpen Link context menu item
+VerknÃ ¼ pfungsadresse Ã  Â ¶ ffnenIgnore Grammar context menu item
+Rechtschreibungmenu item title
+Rechtschreibung und Grammatik anzeigenmenu item title
+Rechtschreibung und Grammatik ausblendenCheck spelling context menu item
+Rechtschreibung prÃ  Â ¼ fenCheck spelling while typing context menu item
+Rechtschreibung wÃ ¤hrend dem Schreiben prÃ ¼ fenCheck grammar with spelling context menu item
+Grammatik und Rechtschreibung prÃ  Â ¼ fenFont context sub-menu item
+SchriftartenBold context menu item
+UnterstrichenOutline context menu item
+UmrandungWriting direction context sub-menu item
+RichtungText direction context sub-menu item
+TextrichtungDefault writing direction context menu item
+VoreinstellungLeft to Right context menu item
+Rechte KanteInspect Element context menu item
+InspizierenLabel for only item in menu that appears when clicking on the search field image, when no searches have been performed
+Keine kÃ ¼ rzlichen Suchenlabel for first item in the menu that appears when clicking on the search field image, used as embedded menu title
+KÃ ¼ rzliche Suchenmenu item in Recent Searches menu that empties menu 's contents
+KÃ ¼ rzliche Suchen lÃ ¶ schenUnknown filesize FTP directory listing item
+% 1 (% 2x% 3 Pixel) Media controller status message when the media is loading
+Media controller status message when watching a live broadcast
+Media controller element
+Audio-ElementMedia controller element
+Video-ElementMedia controller element
+Media controller element
+Media controller element
+Media controller element
+Schieberegler-AnfasserMedia controller element
+Media controller element
+Media controller element
+Media controller element
+Verstrichene ZeitMedia controller element
+RestzeitQShortcut
+AnzeigenMedia controller element
+Media controller element
+Media controller element
+Media controller element
+Media controller element
+Media controller element
+Media controller element
+Media controller element
+Wiedergabe startenMedia controller element
+Wiedergabe anhaltenMedia controller element
+Media controller element
+EntfernenMedia controller element
+Media controller element
+Media controller element
+Media controller element
+Media controller element
+Media controller element
+Media controller element
+Media time description
+Media time description
+% 1 Tage% 2 Stunden% 3 Minuten% 4 SekundenMedia time description
+% 1 Stunden% 2 Minuten% 3 SekundenMedia time description
+% 1 Minuten% 2 SekundenMedia time description
+% 1 SekundenQWebPage
+UngÃ ¼ ltige HTTP-Anfrage
+JavaScript-Hinweis -% 1
+JavaScript-BestÃ ¤tigung -% 1
+JavaScript-Eingabeaufforderung -% 1
+JavaScript-Eingabeaufforderung -% 1
+Cursor zum nÃ ¤chsten Zeichen bewegen
+Cursor zum vorherigen Zeichen bewegen
+Cursor zum nÃ ¤chsten Wort bewegen
+Cursor zum vorherigen Wort bewegen
+Cursor zur nÃ ¤chsten Zeile bewegen
+Cursor zur vorherigen Zeile bewegen
+Cursor an den Zeilenanfang setzen
+Cursor an das Zeilenende setzen
+Cursor an den Anfang des Blocks setzen
+Cursor an das Ende des Blocks setzen
+Cursor an den Anfang des Dokuments setzen
+Cursor an das Ende des Dokuments setzen
+Alles auswÃ ¤hlen
+Bis zum nÃ ¤chsten Zeichen auswÃ ¤hlen
+Bis zum vorherigen Zeichen auswÃ ¤hlen
+Bis zum nÃ ¤chsten Wort auswÃ ¤hlen
+Bis zum vorherigen Wort auswÃ ¤hlen
+Bis zur nÃ ¤chsten Zeile auswÃ ¤hlen
+Bis zur vorigen Zeile auswÃ ¤hlen
+Bis zum Anfang der Zeile auswÃ  Â ¤hlen
+Bis zum Ende der Zeile auswÃ ¤hlen
+Bis zum Anfang des Blocks auswÃ  Â ¤hlen
+Bis zum Ende des Blocks auswÃ ¤hlen
+Bis zum Anfang des Dokuments auswÃ  Â ¤hlen
+Bis zum Ende des Dokuments auswÃ ¤hlen
+Bis zum Wortanfang lÃ  Â ¶ schen
+Bis zum Wortende lÃ ¶ schen
+Neuen Absatz einfÃ ¼ gen
+Neue Zeile einfÃ ¼ gen
+Durchgestrichendefault label for Submit buttons in forms on web pages
+Absenden
+EinfÃ ¼ gen
+QShortcut
+Eingabe
+QShortcut
+Pfeil rechts
+Parse-Fehler:% 1QWebPage
+Web-Ã  berprÃ ¼ fung -% 2
+System
+Nach oben wiederherstellen
+Nach unten wiederherstellen
+EnthÃ ¤lt Befehle zur VerÃ  Â ¤nderung des Fensters
+Bringt ein maximiertes Fenster zurÃ ¼ ck auf die NormalgrÃ ¶ Ã  e
+Bewegt ein Fenster aus dem Weg
+Bringt ein maximiertes Fenster zurÃ ¼ ck auf die NormalgrÃ ¶ Ã  e
+Bringt das Fenster in den Vollbildmodus
+SchlieÃ  t das Fenster
+Zeigt den Namen fÃ  Â ¼ r das Bedienelement an und enthÃ ¤lt ein Bedienfeld zur Ã  nderung
+HÃ ¤kchen entfernen
+HÃ ¤kchen setzen
+Umschalten
+DrÃ ¼ cken
+Mehr
+Weniger
+Position
+Zeile abwÃ  Â ¤rts
+Drehregler
+Geschwindigkeitsmesser
+Schieberegler-Anfasser
+Links rollen
+Rechts rollen
+Andocken
+Schwebend
+AusfÃ ¼ hren
+Eingabemethode auswÃ ¤hlen
+Umschalter fÃ  Â ¼ r mehrere Eingabemethoden
+Umschalter fÃ ¼ r mehrere Eingabemethoden, der das KontextmenÃ ¼ von Text-Eingabefeldern verwendetQPrintPreviewDialog
+Lautstärke:% 1%
+Verwenden Sie den Schieberegler zum Einstellen der Lautstärke. Die äußerste linke Position entspricht 0%, die rechte Position entspricht% 1%.
+Stummgeschaltet
+ZurÃ ¼ ckschalten auf GerÃ ¤tâ  % 1â   Phonon::
+BenachrichtigungenPhonon::
+MusikPhonon::
+VideoPhonon::
+KommunikationPhonon::
+SpielePhonon::
+ZugangshilfenNAME OF TRANSLATORS
+Stephan JohachEMAIL OF TRANSLATORS
+hunsum @ gxm.de
+Die Wiedergabe kann nicht gestartet werden. Prüfen Sie bitte die Installation von GStreamer und stellen Sie sicher, dass das Modul libgstreamer-plugins-base installiert ist.
+Ein notwendiger Codec fehlt. Bitte installieren Sie folgende Codecs, damit die Wiedergabe funktioniert:% 0
+Medienquelle kann nicht geöffnet werden.
+Ungültiger Quellentyp.
+Medienquelle kann nicht gefunden werden.
+Das Audio-Gerät kann nicht geöffnet werden. Das Gerät wird bereits anderweitig verwendet.
+Medienquelle kann nicht dekodiert werden.
+Hinweis: Das Paket gstreamer0.10-plugins-good scheint nicht installiert zu sein. Einige Video-Funktionen wurden daher deaktiviert.
+Hinweis: Die grundlegenden GStreamer-Module scheinen nicht installiert zu sein. Alle Audio- und Video-Funktionen wurden daher deaktiviert.
+Phonon Xine-Treiber
+ALSA-Standard-AusgabeThis string is only shown when the KDE runtime is broken. The technical term 'Platform Plugin' might help users to find a solution, so it might make sense to leave that term untranslated.
+Das Plattform-Modul funktioniert nicht. Diese Notfalllösung verwendet das erste verfügbare ALSA-Gerät.
+OSS-Standard-AusgabeThis string is only shown when the KDE runtime is broken. The technical term 'Platform Plugin' might help users to find a solution, so it might make sense to leave that term untranslated.
+Das Plattform-Modul funktioniert nicht. Diese Notfalllösung verwendet das erste verfügbare OSS-Gerät.
+Jack Audio Connection Kit
+JACK ist ein Audio-Server mit kurzer Reaktionszeit. Es kann eine Vielzahl unterschiedlicher Anwendungen mit einem Audiogerät verbinden und ermöglicht es auch, Audio zwischen den Anwendungen gemeinsam zu nutzen. JACK wurde von Grund auf für professionelle Tonarbeit entwickelt und die Entwicklung hat zwei Schwerpunkte: synchrones Ausführen aller dienstanfordernden Geräte und Operationen mit kurzer Reaktionszeit.
+aRts
+aRts ist der alte Sound-Server und das Medien-Grundgerüst, das in KDE 2 und KDE 3 verwendet wurde. aRts ist veraltet und die Verwendung wird nicht mehr empfohlen.
+Esound (ESD)
+Verwendet den hervorragenden IIR-Equalizer-Code von Anders Johansson aus dem Audacious-Projekt als Audio-Equalizer. Parameter: Vorverstärkung - passt die Lautstärke aller Werte gleichmäßig an 10 Equalizer-Bänder - dies sind die eigentlichen Equalizer-Einstellungen.
+LautstÃ ¤rke
+Ã  berblendkurve
+Zu LautstÃ ¤rke Ã ¼ berblenden
+Ã  berblendzeit
+Ã  berblenden beginnen
+Normalisiert den Klang durch Maximieren der LautstÃ ¤rke ohne den Klang zu deformieren. Parameter: Methode: 1: Ein einzelnes Sample verwenden, um die Variationen durch das gewichtete Mittel Ã  Â ¼ ber die vergangenen Samples anzugleichen (Standard); 2: Mehrere Samples verwenden, um die Variationen durch das gewichtete Mittel Ã  Â ¼ ber die vergangenen Samples anzugleichen.
+Es ist kein Eingabe-Modul fÃ ¼ r MRL [% 1] zu finden.
+FÃ ¼ r die angegebenen Media-Daten kann kein Demultiplexer-Modul gefunden werden.
+Es ist kein Demultiplexer-Modul fÃ ¼ r MRL [% 1] zu finden.
+Xine kann keinen Datenstrom erzeugen.
+Die Wiedergabe ist fehlgeschlagen, weil keine verwendbaren Video- oder Audio-AusgabegerÃ ¤te verfÃ ¼ gbar sind.
+PulseAudio
+Ã  berblendkurve
+Aktuelle LautstÃ  Â ¤rke
+LautstÃ ¤rke, zu der Ã ¼ berblendet werden soll
+Ã  berblendzeit in Millisekunden
+Ein- oder Ausblenden mit verschiedenen Ã  berblendkurven
+.
+Name
+Hinzufügen
+und
+.
+Farbleiste
+Tastatursteuerung für Zeichenobjekte
+/ text / sdraw / guide / keyboard.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Zugänglichkeit;% PRODUCTNAME Draw
+Zeichenobjekte; Texteingabemodus
+Texteingabemodus für Zeichenobjekte
+Tastatursteuerung ($[officename] Draw Zugänglichkeit)
+Zeichnungsobjekte lassen sich über die Tastatur erstellen und bearbeiten.
+Objekt erzeugen und bearbeiten
+Zeichnen
+gelangen.
+Rechteck
+oder
+Ellipse
+erreichen.
+Nach-Oben
+- oder
+Nach-Unten
+-Pfeiltaste, um die untergeordnete Symbolleiste zu öffnen, und drücken Sie dann die
+Nach-Rechts
+- oder
+Nach-Links
+-Taste, um ein Symbol auszuwählen.
+Befehl
+Strg
+.
+Das Objekt wird in der Mitte des aktuellen Dokuments erzeugt.
+Befehl
+Strg
+.
+Objekt auswählen
+Befehl
+Strg
+, um in das Dokument zu wechseln.
+Drücken Sie die Tabulatortaste, bis das Objekt hervorgehoben wird, das Sie auswählen möchten.
+Überblendung zwischen zwei Objekten
+/ text / sdraw / guide / cross _ fading.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Zeichenobjekte; zwei Objekte überblenden
+Überblenden; zwei Zeichenobjekte
+Überblendung zwischen zwei Objekten
+Bei einer Überblendung werden Zwischenformen zweier Zeichnungsobjekte erzeugt und in gleichmäßigen Schritten zwischen den beiden Objekten verteilt.
+Der Befehl zum Überblenden zweier Objekte existiert nur für Zeichnungsdokumente von $[officename] Draw, nicht in $[officename] Impress.
+Wenn Sie in einer Präsentation ein Objekt benötigen, das aus einer Überblendung stammt, können Sie es über die Zwischenablage aus dem Zeichnungsdokument in das Präsentationsdokument kopieren.
+So erzeugen Sie eine Überblendung zwischen zwei Objekten:
+Klicken Sie mit gedrückter Umschalttaste auf die beiden Objekte.
+Bearbeiten - Überblenden.
+Schritte
+.
+OK
+.
+Es wird eine Gruppe mit den beiden ursprünglichen Objekten und der von Ihnen festgelegten Anzahl (Schritte) an Zwischenobjekten angezeigt.
+Abbildung zum Überblenden
+Befehl
+Strg
++ F3, um den Gruppenbearbeitungsmodus zu beenden.
+Bearbeiten - Überblenden
+Hinzufügen von Text
+/ text / sdraw / guide / text _ enter.xhp
+Textrahmen
+Einfügen; Textrahmen
+Kopieren; Text aus anderen Dokumenten
+Einfügen; Text aus anderen Dokumenten
+Legenden; Zeichnungen
+mw changed "adding;" to "inserting;"
+Text hinzufügen
+In eine Zeichnung oder Präsentation lassen sich verschiedene Arten von Text einfügen:
+Text in einem Textrahmen
+Text, der die Zeichengröße ändert, um die Rahmengröße auszufüllen.
+Text, der jedem Zeichnungsobjekt durch Doppelklicken auf das Objekt hinzugefügt wird.
+Text, der aus einem Writer-Dokument kopiert wurde.
+Text, der aus einem Text- oder HTML-Dokument eingefügt wurde.
+Hinzufügen von Textrahmen
+Text
+Symbol
+und setzen Sie den Mauszeiger an die Stelle, an der Sie den Text einfügen möchten.
+Ziehen Sie einen Textrahmen zur im Dokument benötigten Größe auf.
+Geben oder fügen Sie Ihren Text in den Textrahmen ein.
+Doppelklicken Sie auf den Text, um ihn zu bearbeiten oder die Texteigenschaften wie Schriftgröße oder -farbe zu formatieren.
+B. der Rahmenlinienfarbe oder zum Anordnen des Objekts vor oder hinter anderen Objekten klicken Sie auf den Rahmen des Textobjekts.
+Text an Rahmen anpassen
+Erzeugen Sie ein Textrahmen, wie es in den Schritten oben beschrieben ist.
+Format - Text
+.
+Der Dialog
+Text
+wird geöffnet.
+Text
+das Kontrollkästchen
+Höhe an Text anpassen
+und aktivieren Sie dann das Kontrollkästchen
+An Rahmen anpassen
+.
+Klicken Sie auf
+OK
+.
+Nun können Sie die Größe des Textrahmens ändern und damit Größe und Form der Textzeichen anzupassen.
+Legende
+Sie können jeder Grafik Text hinzufügen, nachdem Sie auf die Grafik doppelgeklickt haben.
+Format - Text
+.
+Legenden
+Symbol
+, um die Symbolleiste Legenden zu öffnen.
+Wählen Sie eine Legende aus und setzen Sie den Mauszeiger an die Stelle, an der die Legende beginnen soll.
+Sobald Sie den Text in die Legende eingeben wollen, klicken Sie doppelt auf die Linie.
+Geben Sie den Text ein.
+Kopieren von Text
+Markieren Sie den Text in Ihrem Writer-Dokument.
+Bearbeiten - Kopieren
+).
+Klicken Sie auf die Seite oder Folie, auf der der Text eingefügt werden soll.
+Bearbeiten - Einfügen
+oder
+Bearbeiten - Inhalte einfügen
+ein.
+Inhalte einfügen
+können Sie das einzufügende Textformat wählen.
+Abhängig von den Formaten können Sie unterschiedliche Textattribute kopieren.
+Importieren von Text
+Klicken Sie auf die Seite oder Folie, in die der Text importiert werden soll.
+Einfügen - Datei
+.
+Einfügen
+.
+Der Dialog
+Text einfügen
+wird geöffnet.
+Klicken Sie auf
+OK
+, um den Text einzufügen.
+Einfügen
+/ text / sdraw / main0104.xhp
+Einfügen
+Fanglinien, Scans, Grafiken, Objekte, Symbole und andere Dateien.
+Seite
+Ebene...
+Fangpunkt / -linie einfügen...
+Kommentar
+Sonderzeichen...
+Hyperlink
+Tabelle
+Diagramm
+Fügt ein Diagramm ein.
+Frame...
+Datei...
+Seite einfügen
+/ text / sdraw / 01 / 04010000.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Fügen Sie z.
+B. hinter Seite2 eine Seite ein, so wird die alte Seite3, wenn es sie gab, jetzt zur Seite4.
+Extras
+/ text / sdraw / main0106.xhp
+Extras
+Hier starten Sie die Rechtschreibprüfung oder den Thesaurus, der Ihnen alternative Wörter nennen kann.
+AutoKorrektur...
+Anpassen
+Symbolleiste "Zeichnen"
+/ text / sdraw / main0210.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Symbolleiste Zeichnen
+In der Vorgabe sehen Sie diese Symbolleise unterhalb des Dokuments.
+Rechteck
+Zeichnet an der Stelle, an der Sie im aktuellen Dokument ziehen, ein gefülltes Rechteck.
+Klicken Sie dort, wo eine Ecke des Rechtecks platziertwerden soll, und ziehen Sie es bei gedrückter linker Maustaste auf die gewünschte Größe.
+Um ein Quadrat zu zeichnen, halten Sie beim Ziehen dieUmschalttaste gedrückt.
+Ellipse
+Zeichnet an der Stelle, an der Sie im aktuellen Dokument ziehen, eine gefüllte Ellipse.
+Klicken Sie dort, wo die Ellipse gezeichnet werden soll, undziehen Sie sie bei gedrückter linker Maustaste auf die gewünschte Größe.
+Um einen Kreis zu zeichnen, halten Sie beim Ziehen die Umschalttaste gedrückt.
+Text
+Zeichnet an der Stelle, an der Sie im Dokument klicken und ziehen, einen Textrahmen.
+Klicken Sie auf eine beliebige Stelle im Dokument, und geben Sie den gewünschten Text ein bzw. fügen Sie ihn ein.
+Punkte
+Ermöglicht das Bearbeiten von Punkten in einer Zeichnung.
+Klebepunkte
+Ermöglicht das Bearbeiten von Klebepunkten in einer Zeichnung.
+Aus Datei
+Formular-Steuerelemente
+Extrusion ein / aus
+Schaltet die 3D-Effekte für die gewählten Objekte ein bzw. aus.
+Zugriff auf diesen Befehl...
+/ text / sdraw / 00 / 00000004.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Zugriff auf diesen Befehl
+Leistennamen
+/ text / sdraw / main0200.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Symbolleisten
+Dieser Abschnitt bietet einen Überblick über die Symbolleisten in $[officename] Draw.
+Tastenkombinationen für Zeichnungen
+/ text / sdraw / 04 / 01020000.xhp
+Tastenkombinationen; in Zeichnungen
+Zeichnungen; Tastenkombinationen
+Tastenkombinationen für Zeichnungen
+Hier finden Sie eine Liste von Tastenkombinationen, die nur im Umgang mit Zeichnungsdokumenten interessant sind.
+Tastenkombinationen von $[officename]
+.
+Funktionstasten bei Zeichnungsdokumenten
+Tastenkombination
+Wirkung
+(F2)
+Text bearbeiten
+(F3)
+Gruppierung betreten
+Befehl
+Strg
++ F3
+Gruppierung verlassen
+(Umschalt) (F3)
+Duplizieren-Dialog
+(F4)
+Position und Größe-Dialog
+(F5)
+Navigator
+(F7)
+Rechtschreibprüfung
+Befehl
+Strg
++ F7
+Thesaurus
+(F8)
+Punkte bearbeiten ein / aus
+Befehl
+Strg
++ Umschalt + F8
+Text an Rahmen anpassen
+(F11)
+Öffnet das Fenster Formatvorlagen
+Zoom; Tastenkombinationen
+Zeichnungen; Zoom-Funktion
+Tastenkombinationen für Zeichnungen
+Tastenkombination
+Wirkung
++ Taste
+Vergrößert die Ansicht
+- Taste
+Verkleinert die Ansicht
+× Taste (Ziffernblock)
+Zoom auf ganze Seite
+÷ Taste (Ziffernblock)
+Zoom in die aktuelle Selektion
+Befehl
+Strg
++ Umschalt + G
+Gruppierung
+Befehl + Option
+Strg + Alt
++ A
+Gruppierung aufheben
+Befehl
+Strg
++ Umschalt + K
+Kombination
+Befehl + Option
+Strg + Alt
++ Umschalt + K
+Hebt die Kombination der ausgewählten Objekte auf.
+Befehl
+Strg
++ Umschalt + +
+Ganz nach vorn
+Befehl
+Strg
++ +
+Weiter nach vorn
+Befehl
+Strg
++ -
+Weiter nach hinten
+Befehl
+Strg
++ Umschalt + -
+Ganz nach hinten
+Spezielle Tastatursteuerungen bei Zeichnungsdokumenten
+Tastenkombination
+Wirkung
+(Bild auf) -Taste
+Zur vorherigen Seite wechseln.
+(Bild ab) -Taste
+Zur nächsten Seite wechseln.
+Befehl
+Strg
++ BildAuf
+Zur nächsten Ebene wechseln.
+Befehl
+Strg
++ BildAb
+Zur vorherigen Ebene wechseln.
+Pfeiltaste
+Bewegt das selektierte Objekt in Pfeilrichtung
+Befehl
+Strg
++ Pfeiltasten
+Bewegt die Ansicht der Seite in die gewählte Richtung.
+Befehl
+Strg
+halten und mit der Maus ziehen - Hinweis:
+Um diese Tastenkombination verwenden zu können, müssen Sie zunächst die Option
+Kopie beim Verschieben
+unter Extras - Optionen -% PRODUCTNAME Draw - Allgemein aktivieren.
+Beim Bewegen des ausgewählten Objekts wird eine Kopie erzeugt.
+Befehl
+Strg
++ Eingabetaste bei Auswahl eines Zeichenobjekts aus der Werkzeugleiste (mit F6 aktivieren)
+Fügt in der Mitte der aktuellen Ansicht des Dokuments ein Zeichenobjekt mit vorgegebenen Maßen ein.
+(Umschalt) (F10)
+Ruft das Kontextmenü eines ausgewählten Objekts auf.
+(F2)
+Ist ein Text-fähiges Objekt gewählt, wird der Texteingabemodus aktiviert.
+(Eingabetaste)
+Ist ein Text-fähiges Objekt gewählt, wird der Texteingabemodus aktiviert.
+Befehl
+Strg
++ Eingabetaste
+Ist ein Text-fähiges Objekt gewählt, wird der Texteingabemodus aktiviert.
+Ist kein Text-fähiges Objekt auszuwählen, wird eine Kopie der aktuellen Seite angelegt.
+Option
+Alt
+Option
+Alt
+-Taste zentrisch konstruiert.
+Option
+Alt
+und Mausklick auf ein Objekt
+Selektion überlappender Objekte.
+Option
+Alt
++ Umschalt und Mausklick auf ein Objekt
+Selektion überlappender Objekte.
+Das vor dem aktuell selektierten Objekt liegende Objekt wird selektiert.
+Objekt wird der Selektion hinzugefügt, wenn es noch nicht selektiert war oder aus der Selektion entfernt, wenn es schon selektiert war.
+Umschalt und ein Objekt mit der Maus verschieben
+Das selektierte Objekt wird in die gewählte Richtung genau horizontal oder vertikal verschoben.
+Umschalttaste beim Vergrößern / Erstellen
+Ändert die Größe, erhält aber die Seitenverhältnisse.
+(Tab) -Taste
+Selektion der Objekte in der Reihenfolge der Erstellung vom letzten bis zum ersten Objekt.
+(Esc) -Taste
+Beendet den Texteingabemodus eines Objekts.
+Das Objekt bleibt weiterhin markiert.
+Leistungsmerkmale von $[officename] Draw
+/ text / sdraw / main0503.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Leistungsmerkmale von $[officename] Draw
+Mit $[officename] Draw erzeugen Sie einfache und komplexe Zeichnungen und exportieren sie in zahlreiche verbreitete Bildformate.
+Außerdem können Sie Tabellen, Diagramme, Formeln und andere in $[officename] -Programmen erzeugte Elemente in Ihre Zeichnungen einfügen.
+Vektorgrafiken
+$[officename] Draw erzeugt Vektorgrafiken aus Linien und Kurven, die durch mathematische Vektoren definiert sind.
+Vektoren beschreiben Linien, Ellipsen und Polygone entsprechend ihrer geometrischen Beschaffenheit.
+3D-Objekte erstellen
+In $[officename] Draw können Sie einfache 3D-Objekte wie Würfel, Kugeln oder Zylinder erzeugen und sogar die Lichtquelle der Objekte ändern.
+Raster und Fanglinien
+Raster und Fanglinien sind optische Hilfen, die Ihnen die Anordnung von Objekten in Ihrer Zeichnung erleichtern.
+Sie kÃ ¶ nnen ein Objekt auch an einerRasterlinie, Fanglinie oder am Rand eines anderen Objekts fangen.
+Verbinden von Objekten zur Anzeige von Beziehungen
+In $[officename] Draw lässt sich die Beziehung zwischen verschiedenen Objekten mit speziellen Linien namens Verbindern zeigen.
+Die Verbinder werden an die Klebepunkte der Zeichenobjekte angefügt und lösen sich auch dann nicht, wenn die miteinander verbundenen Objekte verschobenwerden.
+Verbinder sind beim Erstellen von Organigrammen und technischen Zeichnungen nützlich.
+Größenanzeige
+In technischen Zeichnungen werden häufig die Größen einzelner Objekte angezeigt.
+Mit $[officename] Draw können Sie lineare Größen anhand von Bemaßungslinien berechnen und anzeigen.
+Gallery
+Die Gallery enthält Bilder, Animationen, Klänge und andere Elemente, die Sie in Ihre Zeichnungen oder andere $[officename] -Programme einfügen können.
+Grafikdateiformate
+BMP, GIF, JPG und PNG.
+Bearbeiten
+/ text / sdraw / main0102.xhp
+Bearbeiten
+Suchen & Ersetzen
+Funktion.
+Suchen & Ersetzen...
+Punkte
+Dient zum Bearbeiten der Punkte Ihrer Zeichnung.
+Klebepunkte
+Klebepunkte
+an.
+UFI removed Layer command (as I did in zillion CWSs before...)
+Verknüpfungen...
+ImageMap
+Hyperlink
+Menüs
+/ text / sdraw / main0100.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Menüs
+Hier finden Sie die Beschreibung aller Menüs mit den Untermenüs und den aufgerufenen Dialogen.
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+The default config.m4 shown in Beispiel 27-1 is a bit more complex:
+Beispiel 27-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Beispiel 38-1 shows a small demonstration of calling a user function.
+Beispiel 38-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+PHP defines a set of macros that can be used in this process, the most useful of which are described in Tabelle 41-1.
+Tabelle 41-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Beispiel 28-1 shows the source.
+Beispiel 28-1.
+Anmerkung:
+The module shown earlier in Beispiel 28-1 can be enabled with --enable-first _ module or --enable-first _ module = yes.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Duplicating Variable Contents:
+API Macros
+Zurück
+Nach vorne
+PHP Handbuch
+Zurück
+Nach vorne
+Access to initialization entries can also be handled with the macros shown in Tabelle 39-1.
+Tabelle 39-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 26.
+Nach vorne
+Anmerkung:
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 26.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Anmerkung:
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 26.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 26.
+Nach vorne
+Warnung
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 26.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+This might sound a bit confusing at first, but it 's not that complicated (see Abbildung 24-1).
+Abbildung 24-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 25.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 25.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+As shown in Abbildung 24-1 As shown in Abbildung 24-1 above, PHP can be extended primarily at three points: external modules, built-in modules, and the Zend engine.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 36.
+Nach vorne
+For examples of these functions, see Beispiel 36-2.
+Beispiel 36-2.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 36.
+Nach vorne
+Beispiel 36-1 shows a source example and its output.
+Beispiel 36-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 36.
+Nach vorne
+Tabelle 36-1.
+Abbildung 36-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+These macros automatically set the correspondent type and value, as described in Tabelle 35-1 and Tabelle 35-2.
+Anmerkung:
+The macros in Tabelle 35-1 automatically return from your function, those in Tabelle 35-2 only set the return value; they don 't return from your function.
+Tabelle 35-1.
+Tabelle 35-2.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 31.
+Nach vorne
+The parameter list of this declaration is very important; you should keep these parameters in mind (see Tabelle 31-1 for descriptions).
+Tabelle 31-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 31.
+Nach vorne
+Internally, zend _ function _ entry is defined as shown in Beispiel 31-1.
+Beispiel 31-1.
+Anmerkung:
+Tabelle 31-2 shows a list of all the macros that you can use to define functions.
+Tabelle 31-2.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 31.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 31.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 31.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 31.
+Nach vorne
+You can see the internal definition of this module in Beispiel 31-2.
+Beispiel 31-2.
+For reference purposes, you can find a list of the macros involved in declared startup and shutdown functions in Tabelle 31-3.
+Tabelle 31-3.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 31.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+For a simple test procedure, you can copy it to your htdocs directory and try it with the source in Beispiel 29-1.
+Warnung
+Beispiel 29-1.
+Calling this PHP file in your Web browser should give you the output shown in Abbildung 29-1.
+Abbildung 29-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+Tabelle 33-1, Tabelle 33-2 and Tabelle 33-3 describe these functions.
+Tabelle 33-1.
+Tabelle 33-2.
+Tabelle 33-3.
+This is done using zend _ hash _ update () () for associative arrays (see Beispiel 33-3) and zend _ hash _ index _ update () for indexed arrays (see Beispiel 33-4):
+Beispiel 33-3.
+Beispiel 33-4.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+To create your own constants, you can use the macros in Tabelle 33-6.
+Tabelle 33-6.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+This is somewhat bad practice, but Table Tabelle 33-5 describes macros that do exactly this task.
+Tabelle 33-5.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Beispiel 33-1.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+The corresponding type value for longs is IS _ LONG (see Beispiel 33-2).
+Beispiel 33-2.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+Tabelle 33-4.
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+Anmerkung:
+Anmerkung:
+Anmerkung:
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Kapitel 33.
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+PHP Handbuch
+Zurück
+Nach vorne
+Zurück
+Zum Anfang
+Nach vorne
+Nach oben
+Fehler:% B nutzt FPA-Anweisungen,% B jedoch nicht
+Fehler:% B nutzt Maverick-Anweisungen,% B jedoch nicht
+Fehler:% B nutzt keine Maverick-Anweisungen,% B jedoch schon
+Fehler:% B nutzt Software-FP,% B nutzt hingegen Hardware-FP
+Fehler:% B nutzt Hardware-FP,% B nutzt hingegen Software-FP
+Interner Fehler: Gefährliche Verschiebung
+% B: Stub-Eintrag% s kann nicht erstellt werden
+Umlagerung sollte eine gerade Zahl sein
+% B (% A + 0x% lx): Unlösbare Verschiebung gegen Symbol »% s «
+% B (% A + 0x% lx): Verschiebung gegen »% s «: Fehler% d
+% B: Umlagerung bei »% A + 0x% x « referenziert das Symbol »% s « mit Nichtnull-Addenden
+Verschiebungsreferenzsymbol nicht im Modul definiert
+R _ BFIN _ FUNCDES referenziert ein dynamisches Symbol mit Nichtnull-Addenden
+Fixups können nicht in einem schreibgeschütztem Abschnitt ausgegeben werden
+Dynamische Umlagerungen können nicht in einem schreibgeschütztem Abschnitt ausgegeben werden
+R _ BFIN _ FUNCDESC _ VALUE referenziert ein dynamisches Symbol mit einem Nichtnull-Addenden
+Umlagerungen zwischen verschiedenen Segmenten sind nicht unterstützt
+Warnung: Die Umlagerung referenziert ein unterschiedliches Segment
+% B: Nicht unterstützter Umlagerungstyp% i
+% s: Das Nicht-fdpic-Objekt kann nicht in die ausführbare fdpic-Datei gelinkt werden
+% s: Das fpic-Objekt kann nicht in die ausführbare Nicht-fdpic-Datei gelinkt werden
+* * * Kontrollieren Sie die Umlagerung% s
+% B, Abschnitt% A: Nichtauflösbare Umlagerung% s gegen das Symbol »% s «
+% B, Abschnitt% A: Kein PLT noch GOT für die Umlagerung% s gegen das Symbol »% s «
+% B, Abschnitt% A: Kein PLT für die Umlagerung% s gegen das Symbol »% s «
+[Der Name, der verloren gegangen ist]
+% B, Abschnitt% A: Umlagerung% s mit Nichtnull-Addenden% d gegen das lokale Symbol
+% B, Abschnitt% A: Umlagerung% s mit Nichtnull-Addenden% d gegen das Symobl »% s «
+% B, Abschnitt% A: Umlagerung% s ist für das globale Symbol »% s « nicht unterstützt
+% B, Abschnitt% A: Umlagerung% s ohne erstellten GOT
+% B, Abschnitt% A: Umlagerung% s besitzt undefinierte Referenz nach »% s «, vielleicht ein Deklarationsfehler?
+% B, Abschnitt% A: Umlagerung% s wird für das außerhalb des Programms definierte Symbol »% s « nicht unterstützt, vielleicht ein Deklarationsfehler?
+(zu viele globale Variablen für -fpic, Rekompilieren Sie mit -fPIC)
+(thread-lokale Daten zu groß für -fpic oder -msmall-tls, Rekompilieren Sie mit -fPIC oder -mno-small-tls)
+% B, Abschnitt% A: v10 / v32-kompatibles Objekt% s darf keine PIC-Umlagerung enthalten
+% B, Abschnitt% A: Die Umlagerung% s ist für ein geteiltes Objekt nicht gültig; Normalerweise ein Einstellungsfehler, Rekompilieren Sie mit -fPIC
+% B, Abschnitt% A: Die Umlagerung% s sollte nicht in einem geteilten Objekt stattfinden; Rekompilieren Sie mit -fPIC
+% B, Abschnitt »% A «, zu Symbol »% s «: Die Umlagerung% s sollte nicht in einem geteilten Objekt stattfinden; Rekompilieren Sie mit -fPIC
+Unerwartete Maschinennummer
+[Symbols haben ein _ -Präfix]
+[v10 und v32]
+[v32]
+% B: Symbole mit _ -Präfix werden verwendet, die Datei wird aber mit präfixfreien Symbolen geschrieben
+% B: Symbole ohne Präfixe werden verwendet, die Datei wird aber mit Symbolen mit _ -Präfix geschrieben
+% B enthält CRIS v32-Code, der mit dem vorhergehenden Objekt inkompatibel ist
+% B enthält nicht-CRIS v32-Code, der mit dem vorhergehenden Objekt inkompatibel ist
+BFD-Linkfehler: Verzweigung (PC rel16) nach Abschnitt (% s) wird nicht unterstützt
+BFD-Linkfehler: Springen (PC rel26) nach Abschnitt (% s) wird nicht unterstützt
+Nicht unterstützte Umwandlung zwischen data / insn-Adressräumen
+Umwandlung benötigt Null-Addenden
+% H: Umdwandlung nach »% s +% v « kann den obigen Fehler verursacht haben
+% H: Umlagerung des Referenzsymbols wurde im Modul nicht definiert
+% H: R _ FRV _ GETTLSOFF wurde nicht auf eine Call-Anweisung angewendet
+% H: R _ FRV _ GOTTLSDESC12 wurde nicht auf die lddi-Anweisung angewandt
+% H: R _ FRV _ GOTTLSDESCHI wurde nicht auf die sethi-Anweisung angewandt
+% H: R _ FRV _ GOTTLSDESCLO wurde nicht auf die setlo- oder setlos-Anweisung angewandt
+% H: R _ FRV _ TLSDESC _ RELAX wurde nicht auf die ldd-Anweisung angewandt
+% H: R _ FRV _ GETTLSOFF _ RELAX wurde nicht auf die Call-Anweisung angewandt
+% H: R _ FRV _ GOTTLSOFF12 wurde nicht auf die ldi-Anweisung angewandt
+% H: R _ FRV _ GOTTLSOFFHI wurde nicht auf die sethi-Anweisung angewandt
+% H: R _ FRV _ GOTTLSOFFLO wurde nicht auf die setlo- oder setlos-Anweisung angewandt
+% H: R _ FRV _ TLSOFF _ RELAX wurd nicht auf eine ld-Anweisung angewandt
+% H: R _ FRV _ TLSMOFFHI wurde nicht auf eine sethi-Anweisung angewandt
+R _ FRV _ TLSMOFFLO wurde nicht auf eine setlo- oder setlos-Anweisung angewandt
+% H: R _ FRV _ FUNCDESC referenziert ein dynamisches Symbol mit Nichtnull-Addenden
+% H: Fixups können nicht in schreibgeschützten Abschnitten ausgegeben werden
+% H: Dynamische Umwandlungen können nicht in schreibgeschützten Abschnitten ausgegeben werden
+% H: R _ FRV _ FUNCDESC _ VALUE referenziert ein dynamisches Symbol mit einem Nichtnull-Addenden
+% H: Umwandlug gegen »% s « referenziert ein unterschiedliches Segment
+% H: Umwandlung gegen »% s «:% s
+% B: Nicht unterstützter Umwandlungstyp% i
+% s: Kompiliert mit% s und gegen ein non-pic-Umwandlungen nutzendes Modul gelinkt
+% s: Kompiliert mit% s und gegen ein mit% s kompiliertes Modul gelinkt
+% s: Benutzt ein anderes unbekanntes e _ flags (0x% lx) -Feld als das vorherige Modul (0x% lx)
+Privates Flag = 0x% lx:
+% B: Umwandlung in generisches ELF (EM:% d)
+% B (% A + 0x% lx):% s kann nicht erreicht werden, Rekompilieren Sie mit -ffunction-sections
+% B: Umwandlung% s kann nicht zur Erstellung eines geteilten Objekts benutzt werden; Rekompilieren Sie mit -fPIC
+% B: Doppelter Exportfehler% s
+% B (% A + 0x% lx):% s-Fixup für insn-0x% x ist bei einem nicht geteiltem Verweis nicht unterstützt
+% B (% A + 0x% lx):% s kann nicht für% s behandelt werden
+.got-Abschnitt folgt nicht unmittelbar dem .plt-Abschnitt
+% B: Ungültiger Umwandlungstyp% d
+% B: TLS-Übergang von% s zu »% s « bei 0x% lx im Abschnitt »% A « schlug fehl
+% B: »% s « greift sowohl auf das normale als auch das thread-lokale Symbol zu
+% P:% B-Warnung: Umwandlung gegen »% s « im schreibgeschütztem Abschnitt »% A «.
+% P:% B-Warnung: Umwandlung in schreibgeschütztem Abschnitt »% A «.
+% B: Unbekannte Umwandlung (0x% x) in Abschnitt »% A «
+% B: Umwandlung von% s gegen STT _ GNU _ IFUNC-Symbol »% s « wurde von% s nicht behandelt
+Verborgenes Symbol
+Internes Symbol
+Geschütztes Symbol
+Symbol
+% B: Umwandlung R _ 386 _ GOTOFF gegen undefiniertes% s »% s « kann beim Erstellen eines geteilten Objekts nicht genutzt werden
+% B: Umwandlung von R _ 386 _ GOTOFF gegen geschützte Funktion »% s « kann bei der Erstellung eines geteilten Objekts nicht genutzt werden
+Verworfener Ausgabeabschnitt: `% A # x27;
+ip2k-Relaxer: Tabelle wechseln ohne beendete Abstimmungsumwandlungsinformationen.
+ip2k-Relaxer: Kaputten Tabellenkopf wechseln.
+ip2k-Linker: Fehlende Seitenanweisung bei 0x% 08lx (Ziel = 0x% 08lx).
+ip2k-Linker: Redundante Seitenanweisung bei 0x% 08lx (Ziel = 0x% 08lx).
+% s: Benutzt andere e _ flags (0x% lx) -Felder als das vorherige Modul (0x% lx)
+Relative Umwandlung globaler Pointer bei _ gp nicht definiert
+Relative Adresse des globalen Zeigers außerhalb des zulässigen Bereichs
+Interner Fehler: Addend sollte für R _ LM32 _ 16 _ GOT Null sein
+SDA-Umwandlung bei _ SDA _ BASE _ nicht definiert
+% B: Das Ziel (% s) einer% s-Umwandlung ist im falschen Abschnitt (% A)
+% B: Anweisungsmengendiskrepanz zum vorherigen Modul
+Private Flags =% lx
+: m32r-Anweisungen
+: m32rx-Anweisungen
+: m32r2-Anweisungen
+Referenzierungen zum entfernte Symbol »% s « mittels einer falschen Umwandlung kann in fehlerhafter Ausführung enden
+Die bankierte Adresse [% lx:% 04lx] (% lx) ist nicht in der gleichen Bank wie die momentan bankierte Adresse [% lx:% 04lx] (% lx)
+Referenzierte zu einer bankierten Adresse [% lx:% 04lx] im normalen Adressbereich bei% 04lx
+% B: Für 16-Bit-Ganzzahl (-mshort) und andere für 32-Bit-Ganzzahl kompilierte Dateien werden gelinkt
+% B: Für 32-Bit-Gleitzahl (-fshort-double) und andere für 64-Bit-Gleitzahl kompilierte Dateien werden gelinkt
+% B: Für HCS12 kompilierte Dateien werden mit anderen für HC12 kompilierte Dateien gelinkt
+% B: Benutzt andere e _ flags (0x% lx) -Felder als das vorherige Modul (0x% lx)
+[abi = 32-bit int,
+[abi = 16-bit int,
+64-bit double,
+32-bit double,
+cpu = HC11]
+cpu = HCS12]
+cpu = HC12]
+[Speicher = Speicherbankmodell]
+[Speicher = Flach]
+unbekannt
+% B: GOT-Überlauf: Zahl der Umwandlungen mit 8-Bit-Versatz >% d
+% B: GOT-Überlauf: Anzahl der Umwandlungen mit 8- oder 16-Bit-Versatz >% d
+% B (% A + 0x% lx): R _ 68K _ TLS _ LE32-Umwandlung in einem geteilten Objekt nicht erlaubt
+% B: Umwandlung% s (% d) wird momentan nicht unterstützt.
+% B: Unbekannter Umwandlungstyp% d
+mep: Keine Umwandlung für Code% d
+MeP: Wie% d% d sein sollte
+% B und% B sind für unterschiedliche Kerne
+% B und% B sind für unterschiedliche Konfigurationen
+Private Flags = 0x% lx
+% s: Unbekannter Umwandlungstyp% d
+% s: Das Ziel (% s) einer% s-Umwandlung ist im falschen Abschnitt (% s)
+% B: Möglicherweise wurde ohne -fPIC kompiliert?
+sinngemäße Umwandlung für ein externes Symbol
+32-Bit gp-relative Umwandlung für ein externes Symbol
+gefährliche Umwandlung
+Dynamische Variable »% s « hat Größe Null
+generischer Linker kann% s nicht behandeln
+Fehlerhafter% s-Abschnitt in% B
+Lesen in% s-Abschnitt von% B nicht möglich
+Warnung: Festlegen der Größe von% s-Abschnitt in% B nicht möglich
+Speicherreservierung für neuen APUinfo-Abschnitt gescheitert
+Berechnen des neuen APUinfo-Abschnitts gescheitert
+Installation des neuen APUinfo-Abschnitts gescheitert
+% B: Umwandlung% s kann bei Erstellung eines geteilten Objekts nicht genutzt werden
+% P:% H:% s-Umwandlung gegen ein lokales Symbol
+Warnung:% B verwendet harte Fließkommazahlen,% B verwendet weiche Fließkommazahlen
+Warnung:% B verwendet doppeltgenaue harte Gleitkommazahlen,% B verwendet einfachgenaue harte Gleitkommazahlen
+Warnung:% B verwendet weiche Gleitkommazahlen,% B verwendet einfachgenaue harte Gleitkommazahlen
+Warnung:% B verwendet unbekannte Gleitkommazahlen-ABI% d
+Warnung:% B verwendet unbekannte Vektor-ABI% d
+Warnung:% B verwendet Vektor-ABI »% s «,% B verwendet »% s «
+Warnung:% B benutzt r3 / 4r für Kleinstruktur-Returns,% B benutzt den Speicher
+Warnung:% B benutzt unbekannte Kleinstruktur-Return-Konvention% d
+% B: wurde mit -mrelocatable kompiliert und mit normal kompilierten Modulen gelinkt
+% B: wurde normal kompiliert und mit mit -mrelocatable kompilierten Modulen gelinkt
+% P: bss-plt erzwungen wegen% B
+% P: bss-plt durch Profil erzwungen
+% H arg lost _ _ tls _ get _ addr, TLS-Optimierung deaktiviert
+% P:% B: unbekannter Umwandlungstyp für% d für Symbol% s
+% P:% H: Nichtnull-Addend bei% s-Umwandlung gegen »% s «
+% P:% H: Umwandlung% s für indirekte Funktion% s ist nicht unterstützt
+% P:% B: Das Ziel (% s) einer% s-Umwandlung liegt im falschen Ausgabeabschnitt (% s)
+% P:% B: Umwandlung% s wird für das Symbol% s noch nicht unterstützt
+% P:% H: unlösbare% s-Umwandlung gegen das Symbol »% s «
+% P:% H:% s-Umwandlung gegen »% s «: Fehler% d
+% P:% s ist im% s erstellendem Linker nicht definiert
+% B (% A): Fehler: Aufruf der undefinierten Funktion »% s «
+% B (% A): Warnung: Nicht gerichteter Zugriff auf Symbol »% s « im kleinen Datenbereich
+% B (% A): Interner Fehler: Außerhalb des zulässigen Bereichs
+% B (% A): Interner Fehler: Nicht unterstützter Umwandlungsfehelr
+% B (% A): Interner Fehler: gefährliche Umwandlung
+% B (% A): Interner Fehler: Unbekannter Fehler
+% B:% A: Warnung: Veraltete Red Hat Umwandlung
+% B (% A): unsichere PID-Umwandlung% s bei 0x% 9klx (gegen% s in% s)
+Warnung: RX _ SYM-Umwandlung mit einem unbekanntem Symbol
+% B (% A + 0x% lx): ungültige Anweisung für TLS-Umwandlung% s
+nicht genügend GOT-Raum für lokale GOT-Einträge
+Adresse nicht Wort-ausgerichtet
+% s: Schlecht formatierte Umwandlung für Abschnitt% s erkannt
+% B: CALL15 Umwandlung bei 0x% lx nicht gegen globales Symbol
+[Bild]
+[fix dep]
+% B: Warnung: PIC-Dateien werden mit nicht-PIC-Dateien gelinkt
+% B: IMPORT AS-Direktive für% s verschweigt vorhergehendes IMPORT AS
+% B: Unbekannter .directive-Befehl:% s
+% B: Hinzufügen des umbenannten Symbols% s gescheitert
+% B: 0x% lx: Warnung: Fehlerhafter R _ SH _ USES-Versatz
+% B: 0x% lx: Warnung: R _ SH _ USES zeigt auf nicht erkanntes insn 0x% x
+% B: 0x% lx: Warnung: schlechter R _ SH _ USES-Ladeversatz
+% B: 0x% lx: Warnung: Konnte erwartete Umwandlung nicht finden
+% B: 0x% lx: Warnung: Symbol an unerwarteter Position
+% B: 0x% lx: Warnung: erwartete COUNT-Umwandlung nicht gefunden
+% B: 0x% lx: Warnung: Schlechte Anzahl
+% B: 0x% lx: Fatal: Umwandlungsüberlauf während Erholung
+Unerwartetes STO _ SH5 _ ISA32 bei lokalem Symbol wird nicht behandelt
+% B: 0x% lx: Fatal: nicht gerichtetes Zweigziel für Erholungsunterstützungsumwandlung
+% B: 0x% lx: Fatal: nicht ausgerichtete% s-Umwandlung 0x% lx
+% B: 0x% lx: Fatal: R _ SH _ PSHA-Umwandlung% d nicht im Bereich -32.. 32
+% B: 0x% lx: Fatal: R _ SH _ PSHL-Umwandlung% d nicht im Bereich -32.. 32
+% B (% A + 0x% lx): Fixup zu »% s « kann nicht in schreibgeschütztem Abschnitt ausgegeben werden
+% B (% A + 0x% lx):% s-Umwandlung gegen externes Symbol »% s «
+% X% C: Umwandlung nach »% s « referenziert ein anderes Segment
+% C: Warnung: Umwandlung nach »% s « referenziert ein anderes Segment
+% B: »% s « griff sowohl als normales als auch als FDPIC-Symbol zu
+% B: »% s « griff sowohl als FDPIC- als auch als thread-lokales Symbol zu
+% B: Funktionsbeschreibungsumwandlung mit Nichtnull-Addenden
+% B: TLS-lokaler exec-Code kann nicht in ein geteiltes Objekt gelinkt werden
+% s: als 32-Bit-Objekt kompiliert,% s ist 64-Bit
+% s: als 64-Bit-Objekt kompiliert,% s ist 32-Bit
+% s: Objektgröße passt nicht mit dem Ziel% s überein
+% s: Datalabel-Symbol in Eingabe erkannt
+PTA-Diskrepanz: eine SHmedia-Adresse (Bit 0 = = 0)
+PTA-Diskrepanz: eine SHcompact-Adresse (Bit 0 = = 0)
+% s: GAS-Fehler: unerwarteter PTB-insn mit R _ SH _ PT _ 16
+% B: Fehler: nicht ausgerichteter Umwandlungstyp% d bei% 08x-Umwandlung% p
+% s: konnte hinzugefügte .cranges-Einträge nicht ausschreiben
+% s: sortierte .crange-Einträge konnten nicht geschrieben werden
+% B: kompiliert für 64-Bit-System, aber Ziel ist 32-Bit
+% B: Little-Endian-Dateien werden mit Big-Endian-Dateien gelinkt
+% X% P: Overlay-Abschnitt% A startet nicht auf einer zwischengespeicherten Linie.
+% X% P: Overlay-Abschnitt% A ist größer als die Zwischenspeicherlinie.
+% X% P: Overlay-Abschnitt% A ist nicht im Zwischenspeicherbereich.
+% X% P: Overlay-Abschnitt% A und% A starten nicht bei der gleichen Adresse.
+Warnung: Aufruf eines Nichtfunktion-Symbols% s in% B definiert
+% A: 0x% v lrlive .brinfo (% u) unterscheidet sich von der Analyse (% u)
+% B ist nicht erlaubt um% s zu definieren
+es ist Ihnen nicht erlaubt,% s in einem Skript zu definieren
+% s im Overlay-Abschnitt
+Overlay-Stub-Umwandlungsüberlauf
+Stubs stimmen nicht mit berechneter Größe überein
+Warnung:% s überlappt% s
+Warnung:% s übersteigt Abschnittsgröße
+% A: 0x% v in Funktionstabelle nicht gefunden
+% B (% A + 0x% v): Aufruf eines Nicht-Code-Abschnitts% B (% A), Analyse unvollständig
+Stapelanalyse ignoriert Aufruf von% s nach% s
+% s: 0x% v
+% s: 0x% v 0x% v
+ruft auf:
+% s% s% s
+% s doppelt in% s
+% s doppelt
+Entschuldigung, keine Unterstützung doppelte Objektdateien in Auto-Overlay-Skripten
+Nicht-Overlay-Größe von 0x% v plus maximaler Overlay-Größe von 0x% v übersteigt lokalen Speicher
+% B:% A übersteigt Overlay-Größe
+Stapelgröße für Aufrufgraphenwurzelknoten.
+Stapelgröße für Funktionen. Anmerkungen: » * « max. Stapel, » t « Tail-Aufruf
+Maximaler benötigter Stapel ist 0x% v
+fataler Fehler während Erstellung von .fixup
+% B (% s + 0x% lx): unlösbare% s-Umwandlung gegen Symbol »% s «
+Warnung: Erzeugung einer geteilten Bibliothek enthält nicht-PIC-Code
+Warnung: Erzeugung einer geteilten Bibliothek enthält nicht-PID-Code
+% B: SB-relative Umwandlung, aber _ _ c6xabi _ DSBT _ BASE ist undefiniert
+% B: Fehler: unbekanntes benötigtes EABI-Objektattribut% d
+% B: Fehler: unbekanntes EABI-Objektattribut% d
+Fehler:% B benötigt mehr Stapelausrichtung als% B bereitstellt
+Fehler: unbekannter Tag _ ABI _ array _ object _ alignment-Wert in% B
+Fehler: unbekannter Tag _ ABI _ array _ object _ align _ expected-Wert in% B
+Fehler:% B benötigt mehr Datenbereichauflösung als% B bereitstellt
+Warnung:% B und% B unterscheiden sich in wchar _ t-Größe
+Warnung:% B und% B unterscheiden sich darin, ob der Code für DSBT kompiliert wurde
+Variable »% s « kann nicht in mehreren kleinen Datenregionen belegt werden
+Variable »% s « kann nur in einer der kleinen, Null oder winzigen Datenregionen liegen
+Variable »% s « kann nicht gleichzeitig in kleiner und Null-Datenregion liegen
+Variable »% s « kann nicht gleichzeitig in kleiner und winzigen Datenregion liegen
+Variable »% s « kann nicht gleichzeitig in Null- und winzigen Datenregion liegen
+FEHLER beim finden vorheriger HI16-Umwandlung
+konnte spezielles Linkersymbol _ _ gpp nicht finden
+konnte spezielles Linkersymbol _ _ ep nicht finden
+konnte spezielles Linkersymbol _ _ ctbp nicht finden
+% B: Architekturdiskrepanz mit vorherigem Modul
+private Falgs =% lx:
+v850-Architektur
+v850e-Architektur
+v850e1-Architektur
+v850e2-Architektur
+v850e2v3-Architektur
+[kein Bild]
+[d-float]
+[g-float]
+% s: Warnung: GOT-Addend von% ld nach »% s « stimmt nicht mit vorherigem GOT-Addenden von% ld überein
+% s: Warnung: PLT-Addend von% d nach »% s « aus% s-Abschnitt ignoriert
+% s: Warnung:% s-Umwandlung gegen Symbol »% s « von% s-Abschnitt
+% s: Warnung:% s-Umwandlung nach 0x% x von% s-Abschnitt
+Nichtnull-Addend in @ fptr-Umwandlung
+% B (% A): ungültige Eigenschaftentabelle
+% B (% A + 0x% lx): Umwandlungsversatz außerhalb des Bereichs (Größe = 0x% x)
+dynamische Umwandlung in schreibgeschütztem Abschnitt
+TLS-Umwandlung ungültig ohne dynmische Abschnitte
+interne Größeninkonsistenz des .got.loc-Abschnitt
+% B: inkompatibler Maschinentyp. Ausgabe ist 0x% x. Eingabe ist 0x% x
+Versuch der Konvertierung von L32R / CALLX nach CALL schlug fehl
+% B (% A + 0x% lx): Anweisung konnte nicht entziffert werden, möglicher Konfigurationsfehler
+% B (% A + 0x% lx): Anweisung für XTENSA _ ASM _ SIMPLIFY-Umwandlung konnte nicht entziffert werden; möglicher Konfigurationsfehler
+ungültige Umwandlungsadresse
+Überlauf nach Entspannung
+% B (% A + 0x% lx): unerwarteter Fix für% s-Umwandlung
+GPDISP-Umwandlung fand keine ldah- und lda-Anweisungen
+% B: .got-Untersegment überschreitet 64K (Größe% d)
+% B: gp-relative Umwandlung gegen dynamisches Symbol% s
+% B: pc-relative Umwandlung gegen dynamisches Symbol% s
+% B: Änderung in gp: BRSGP% s
+< unbekannt >
+% B:! samegp-Umwandlung gegen Symbol ohne .prologue:% s
+% B: unbehandelte dynamische Umwandlung gegen% s
+% B: pc-relative Umwandlung gegen undefiniertes schwaches Symbol% s
+% B: dtp-relative Umwandlung gegen dynamisches Symobl% s
+% B: tp-relative Umwandlung gegen dynamisches Symbol% s
+Stub-Eintrag für% s kann .plt nicht laden, dp-Versatz =% ld
+Nicht unterstützte Verschiebung
+% B: 64-Bit-Dateien werden mit 32-Bit-Dateien verknüpft
+Warnung: Größe des Symboles »% s « änderte sich von% lu in% B zu% lu in% B
+ungültige Eingabeumwandlung bei Produktion von nicht-ELF, nicht-mmo-Formatuausgabe. Bitte benutzen Sie das objcopy-Programm um von ELF nach mmo zu konvertieren, oder assemblieren Sie mit » -no-expand « (für gcc, » -Wa, -no-expand «)
+ungültige Eingabeumwandlung bei Produktion von nicht-ELF, nicht-mmo-Formatuausgabe. Bitte benutzen Sie das objcopy-Programm um von ELF nach mmo zu konvertieren, oder kompilieren Sie mit der gcc-Option » -mno-base-addresses «.
+% s: Interner Inkonsitenzfehler für Wert für linker-bereitgestellte globale Register: gelinkt: 0x% lx% 08lx! = entspannt: 0x% lx% 08lx
+% s: base-plus-Versatzumwandlung gegen Registersymbol: (unbekannt) in% s
+% s: base-plus-Versatzumwandlung gegen Registersymbol:% s in% s
+% s: Registerumwandlung gegen Nichtregistersymbol: (unbekannt) in% s
+% s: Registerumwandlung gegen Nichtregistersymbol:% s in% s
+% s: Direktive LOCAL ist nur mit einem Register oder Absolutwert gültig
+% s: LOCAL-Direktive: Register $% ld ist kein lokales Register. Erstes globales Register ist $% ld.
+% s: Fehler: Mehrfachdefinition von »% s «; Beginn von% s ist in einer zuvor gelinkten Datei gesetzt
+Registerabschnitt hat Inhalte
+Interne Inkonsistenz: Verbleibende% u! = max% u. Bitte melden Sie diesen Fehler.
+% P:% B: Kann Stub-Eintrag nicht erzeugen% s
+% B: undefiniertes Symbol bei R _ PPC64 _ TOCSAVE-Umwandlung
+% P: dynreloc-Rechenfehler für% B, Abschnitt% A
+% B: .opd ist kein regulärer Datenbereich von opd-Einträgen
+% B: unerwarteter Umwandlungstyp% u in .opd-Abschnitt
+% B: undefiniertes Symbol »% s « in .opd-Abschnitt
+% H _ _ tls _ get _ add velor Argument, TLS-Optimierung deaktiviert
+% s definiert von entferntem TOC-Eitnrag
+% P: Langzweig-Stub »% s « -Versatzüberlauf
+% P: kann Zweig-Stub »% s « nicht finden
+% P: Zweig-Stub »% s « kann nicht gebaut werden
+% B Abschnitt% A übersteigt Stub-Gruppengröße
+% P:% s-Versatz zu groß für .eh _ frame-stdate4-Enkodierung
+% P: Stub passt nicht zur berechneten Größe
+% P:% H: Fehler:% s ist kein Vielfaches von% u
+% s: Undefinierte Version:% s
+% A hat sowohl geordnete [»% A « in% B] als auch ungeordnete [»% A « in% B] Abschnitte
+Warnung:% s-Abschnitt hat Größe 0
+Warnung: Option gc-sections ignoriert
+Die Funktionstabelle (interpretierter .pdata-Abschnittsinhalt)
+Falscher Abschnittsindex in% s
+% s: nicht unterstützt
+% s: nicht implementiert
+Objektmodul NICHT fehlerfrei!
+Fehler: Undefiniertes Zeichen _ _ rtinit
+Ressourcenverzeichnis [.rsrc]
+Ausnahmenverzeichnis [.pdata]
+Sicherheitsverzeichnis
+Fehlerdiagnoseverzeichnis
+Beschreibungsverzeichnis
+Spezialverzeichnis
+Ausnahmenverzeichnis [.tls]
+Konfigurationsverzeichnis laden
+Verzeichnis für eingehende Importe
+Adresstabellenverzeichnis importieren
+Verzeichnisimport verzögern
+CLR-Laufzeit-Header
+Reserviert
+Es gibt eine Importtabelle, aber der Abschnitt, der sie enthält, konte nicht gefunden werden.
+Es gibt eine Importtabelle in% s bei 0x% lx
+\ tDLL-Name:% s
+Es existiert ein Thunk, aber der Abschnitt, der diesen enthält, konnte nicht gefunden werden
+Es existiert eine Exporttabelle, aber der Abschnitt, der diese enthält, konnte nicht gefunden werden
+Es gibt eine exportierbare Tabelle in% s, aber sie passt nicht in diesen Abschnitt
+Es existiert eine Exporttabelle in% s bei 0x% lx
+Export-Markierungen\ t\ t\ t% lx
+Zeit- / Datumsstempel\ t\ t% lx
+Name\ t\ t\ t\ t
+Anzahl in:
+\ tAdressentabelle exportieren\ t\ t% 08lx
+Tabellenadressen
+\ tAdressentabelle exportieren\ t\ t
+Absender-RVA
+RVA exportieren
+Warnung, .pdata-Abschnittsgröße (% ld) ist kein Vielfaches von% d
+Glue-Quellsequenz
+vma:\ t\ tStarten Prolog Funckion Markierungen Ausnahme EH\ t\ tAdresse Länge Länge 32b exc Handler Daten
+Virtuelle Adresse:% 08lx Blockgröße% ld (0x% lx) Anzahl an fixups% ld
+\ tVerschiebung% 4d Versatz% 4x [% 4lx]% s
+Charakteristika 0x% x
+% B: DataDictionary [1] kann nicht eingetragen werden, da .idata $2 fehlt
+% B: DataDictionary [1] kann nicht eingetragen werden, da .idata $4 fehlt
+% B: DataDictionary [12] kann nicht eingetragen werden, da .idata $5 fehlt
+% B: DataDictionary [PE _ IMPORT _ ADDRESS _ TABLE (12)] kann nicht eingetragen werden, da .idata $6 fehlt
+% B: DataDictionary [9] kann nicht eingetragen werden, da _ _ tls _ used fehlt
+Verwendung:% s [Optionen (en)] [Adresse (n)]
+Konvertierung der Adressen in Zeilennummern / Dateinamen-Paare.
+Wenn in der Befehlszeile keine Adressen angegeben sind, werden sie von der Standardeingabe gelesen.

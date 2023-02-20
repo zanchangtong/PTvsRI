@@ -1,0 +1,2000 @@
+Args:% s
+Inheritance Graph
+A graph painter for the inheritance of the classes.
+Class Inheritance
+Johannes Schmid
+Add widgets
+Add widget properties
+Create a package
+Choose the configuration
+Using the API reference
+Browsing the API reference
+Anjuta
+Project Management
+Building and running
+Debugging
+User interface editor
+Add source files
+Auto indentation
+Manual configuration
+Building the code
+Watch the value of variables
+Local variables
+Using the symbol browser
+Create a new project
+Add targets
+Add library targets
+Add data targets
+Import an existing project
+Import non-automake projects
+translator-credits
+Anjuta IDE Manual
+v1.0.0
+Manual for the Anjuta IDE
+Naba
+Kumar
+Andy
+Piper
+Biswapesh
+Chattopadhyayr
+Johannes
+Schmid
+2001-2002
+2006-2008
+Naba Kumar, Andy Piper, Biswapesh Chattopadhyay
+Permission is granted to copy, distribute and / or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You may obtain a copy of the GNU Free Documentation License from the Free Software Foundation by visiting their Web site or by writing to: Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and those trademarks are made aware to the members of the GNOME Documentation Project, the names have been printed in caps or initial caps.
+Anjuta Manual 2.1.0
+2007
+Johannes Schmidjhs @ gnome.org
+Introduction
+Anjuta is a versatile Integrated Development Environment (IDE) for the GNOME desktop. It features a number of advanced programming facilities includes project management, application wizards, an interactive debugger, an integrated Glade UI designer, integrated Devhelp API help, an integrated Valgrind memory profiler, an integrated gprof performance profiler, a class generator, a powerful source editor, source browsing, and more.
+Anjuta DevStudio has been designed to be simple to operate yet powerful enough to fulfill all your programming needs. We've added many new features to Anjuta over the course of its development. Our focus is on delivering power and usability at the same time and making your software development enjoyable without overloading your senses. We intend to continue improving and stabilizing Anjuta to give you the best IDE experience possible. We hope you will have a good time using Anjuta. If not, please help us make it better by reporting bugs and suggestions.
+The following screenshot illustrates some of the things you will find in Anjuta.
+Anjuta has a flexible and advanced docking system that allows you to lay out all views in whatever way you like. You can drag and drop the views using drag bars and rearrange the layout. The layouts are persistent for each project so you can maintain different layouts for different projects. All dock views are minimizable to avoid clutter in the main window. Minimized views appear as icons on the left side of the main window. You can configure all menu actions either by typing when the cursor is over a menu item (the usual GNOME way) or through a dedicated shortcut configuration user interface.
+Please report any problems with Anjuta - this will help to improve the software, as well as helping the open source community.
+Getting Familiar with Anjuta
+Menus and shortcuts
+At the top of the Anjuta main window is the menu bar. You can access almost all of Anjuta's functionality through menu items. Operations have been grouped according to their type. For example, file operations have been grouped into the File menu.
+Menubar
+Anjuta menubar
+File menu
+Shortcut keys are available for many menu items. All shortcut keys are shown alongside the corresponding menu items. Some other useful shortcuts are listed here.
+Switch Editor Page: CtrlAltPage Up (forward) and CtrlAltPage Down (backward). You can also switch pages by right-clicking on the notebook tabs and selecting a filename from the pop-up menu (useful when all the tabs in the editor are not visible at once). Some desktop configurations may already have these shortcut keys assigned. In that case, you will need to reconfigure them (not in Anjuta, because they are fixed) if you want to use these shortcuts.
+Context Help: ShiftF1. Place the cursor on the word (for example, the function name) for which you want to get API help and type this shortcut. Context help only works if you have Devhelp installed; otherwise, the context help menu and toolbar button will be inactive. You can get Devhelp from the Devhelp website. You will also have to install the related Devhelp books.
+Autocomplete: CtrlEnter. Type this shortcut with the cursor placed at the end of an incomplete word and a list of words matching the remaining part will appear. Scroll and select the right word from the list if you find one.
+More shortcuts: Look for the shortcut keys displayed on the right side of menu item labels. Shortcuts can also be changed as explained in the tip below.
+Customize shortcuts
+You can change the default shortcuts by choosing EditPreferences and selecting the Shortcuts tab.
+Main Window
+The main window contains several view windows which can be rearranged by dragging on their title bars. They can also be minimized by clicking on the minimize buttons on the left of title bars.
+The Documents window will have one document active at a time (if there are any files opened). All file commands will apply to this active document. You can switch to any document by clicking on its tab. You can do the same by right-clicking on the page tabs and choosing the document from the pop-up menu that will appear. This is especially useful when you have a lot of files opened, but not all of them are visible in the page tab area.
+The Project window shows a tree of project files if you have a project opened. Otherwise, the Project window is usually hidden. Double-clicking on any item in the Project window will open that file.
+The Files window shows a file tree. If no project is open, the file tree usually points to the file system root but you can change this in the preferences. If a project is open, the window shows all files in the project. Double-clicking opens a file in the appropriate application as configured in the GNOME MIME preferences. Right-clicking opens a context menu which gives you choices about how to open the file.
+The Symbols window shows a tree of available symbols in the project generated from the ctags parser. Double-clicking opens an editor window with the corresponding file and line.
+There is also a Search tab in the Symbols window where you can search for symbols.
+The Message window will list all the messages (both stdout and stderr outputs) when an external command is executed. The Message window is usually hidden, but appears as soon as an external command is executed, such as during file or project compilation, debugging sessions, searches, and many other operations. Anjuta also adds its own messages here when necessary.
+The colors used to display the messages are important. Messages displayed in the standard foreground color (usually black) are normal messages. Messages displayed in orange are warnings, and those displayed in red are errors. Warning and error messages are linked: double-clicking on such a message will take you to the particular file and line number specified in the message.
+For example, when you compile a file which contains errors, some red messages will appear showing what the problems are, and where they occur. Double-clicking on such messages will open the file and highlight the line containing the error.
+The Terminal window is a terminal emulator where you can type commands just like in the GNOME Terminal application.
+Session management
+All settings, including window sizes and positions, are saved when you exit Anjuta. Session management is still under development, so you should not exit Anjuta with any unsaved documents. Anjuta will display a warning if you try to exit with unsaved documents still open.
+File Operations
+Creating a new file and inserting text
+Creating a New File
+To create a new file, choose FileNew from the menu bar, or click on the New File button on the main toolbar. A new page will appear in the editor (or a new window if the parent document is windowed). New documents will be named newfile # 1, newfile # 2, newfile # 3 and so on.
+Save file
+You should save new documents as soon as possible to avoid any data loss in case of a crash.
+File Wizard
+New File Wizard
+The Open File dialog
+A wizard can also be used to create a new file. To create a new file, choose FileNewFile from the menu bar. This will open the New File dialog. Select the file type. Enter the filename. The suffix will be automatically added. You can add license information (according to your license choice) and a header. In case of a C / C + + header file, you can also add an header template. Click OK to validate the creation.
+Anjuta occasionally also creates new file windows during some operations. For example, some Subversion operations such as Diff and View Log create new file windows and add the output there. You can save the contents of these windows to real files if you like.
+Inserting Macros
+You can use macros to quickly edit repetitive sequences of text.
+The Macro plugin must be activated.
+Inserting
+Two types of macros are available: Anjuta macros and user macros (displayed as "My macros"). Anjuta macros are not modifiable, but you can define and modify your own user macros.
+To insert a macro, move the cursor to the desired place. Select EditMacrosMacros.... A dialog window appears. Select the desired macro in the list. The result of the macro expansion is displayed in the window and a summary is shown in the dialog window. Choose Insert. The expanded macro text is inserted at the cursor position.
+Macro
+The Macro dialog
+Another way to insert a macro is to select EditMacrosInsert Macro..., then to press the desired macro shortcut.
+Defining Macros
+From the Insert Macro window, choose Add or select EditMacrosAdd Macro.... The Add / Edit window appears. Enter the macro name, choose or define a category and enter a shortcut. Then edit text relative to your macro. The character '_ BAR _' will indicate the cursor position after the macro insertion. Choose OK. The macro is added to the list.
+You can also erase a macro by selecting it in the list and choosing Remove. This only works for user macros (My Macros), of course.
+Add / Edit Macro
+Add Edit dialog
+Similarly, you can edit and modify a macro by selecting it in the list and choosing Edit.
+Macro Keywords
+Macro keywords are available. They can be included in macro definitions. These macro keywords start and finish with the character '@'.
+Keyword Macro
+The Keyword macro
+Available macro keywords are @ DATE _ TIME @, @ DATE _ YMD @, @ DATE _ Y @, @ USER _ NAME @, @ FILE _ NAME @, @ FILE _ NAME _ UP @, @ FILE _ NAME _ UP _ PREFIX @, @ EMAIL @, @ TABSIZE @, @ INDENTSIZE @, and @ USETABS @.
+Opening and Saving Files
+Open File dialog
+Opening a file: To open an existing file, choose FileOpen from the menu bar, click on the Open button on the toolbar, or press CtrlO. This will display the Open File dialog. Select or enter the name of file you want to open, then click Open. To open more than one file at once, select multiple files to open by holding down the Ctrl key and clicking each file in turn; then press Open. If you change your mind, click Cancel to dismiss the dialog without opening the file.
+Open Multiple File dialog
+The Open File dialog in multiple-select mode
+You can enable the Show Hidden Files option through the pop-up menu that appears when you right-click in the Open File dialog. This option will make hidden files (files starting with ".") visible in the file list. Clear the option to hide hidden files. The Open File dialog also has a built-in file type filter. Select the appropriate file type filter in the dialog and the file list will be limited to the files of the selected type only.
+The Save As File
+Saving a file: To save a file, choose FileSave from the menu bar, click on the Save button on the toolbar, or press CtrlS. This will save the file. If the file is new, a Save As dialog will appear. Enter a filename and click Save to save the new file with the name supplied.
+File autosave
+If you have enabled autosave, Anjuta will not autosave any new files. You must first save them manually. The same applies to the Save All option: Anjuta will not save new files, if you haven't saved them first manually. You must save a file manually before autosave or Save All will work with it.
+Saving a file with a different name: You can explicitly save a file with a new filename. To do this, choose FileSave As from the menu bar. A Save As dialog will appear prompting you to enter the new filename. Enter the name and click Save.
+File save as overwrite
+When you use Save As with an existing file, the original is not deleted. It is left unchanged since the last save. If a file with the new filename already exists, a confirmation dialog will appear to ensure that you want to overwrite it. Clicking Yes will overwrite the file with the file you are saving.
+Closing a file: To close a file, choose FileClose from the menu bar, or click on the Close button on the toolbar. (You can also close a file by clicking the X in its filename tab.) This will close the current file. If the file is not saved, or is a new file, then Anjuta will prompt you to save the file before closing it.
+Editing Files
+Anjuta has a number of features which help you edit and work with source files. The following sections describe how to use some of the interesting features available.
+Editor Margins
+The Tags toolbar
+Editor Margins: Editor margins appear to the left of the editor and are used for some special purposes. There are three editor margins available: the line number margin, the marker margin and the code fold margin. By default (that is, when you run Anjuta for the first time) only the code fold margin will be visible. The rest can be made visible via ViewEditor.
+The line number margin is largest of all the three margins (and is slightly darker then rest) and displays a document's line numbers. The line number margin can be shown or hidden by toggling ViewEditorLine Numbers Margin. Left-clicking on this margin will select an entire line (including the trailing newline, if present). You can set font properties for the line number margin in the preferences.
+The marker margin can be shown or hidden via ViewEditorMarkers Margin. This margin displays graphical icons to mark the given line. The margin may display bookmark markers (blue and rectangular), breakpoint markers (red and circular) and line indicator markers (which look like a yellow pointed arrow). A bookmark marker indicates a bookmarked line, and can be toggled via GotoBookmark Toggle Bookmark with the cursor placed on that line. A breakpoint marker is used in the debugger to indicate a debugging breakpoint (see the Debugging section for more details). A line indicator marker is used to indicate the current program position in the debugger.
+The code fold margin is where the folding tree is visible. Clicking on folding tree nodes will fold or unfold code blocks. An underline will also be drawn below a folded line to make it more obvious that a block of code has been folded below the line. For more details on code folding, see the section Code Folding below.
+Invisible margin marker
+Editor markers when the marker margin is invisible
+If the marker margin is not visible, Anjuta displays markers by changing the background color of a line. For example, if a breakpoint marker is set in a line and the marker margin is not visible, that line will be displayed with a red background. Similarly, for a bookmark marker and a line indicator marker the background color of the line will be sky blue and yellow, respectively. If you do not like this (perhaps due to some contrasting themes), enable the marker margin via ViewEditorMarker Margin.
+Editor Guides
+Editor with guides
+Syntax highlighting
+Anjuta can highlight the syntax of many different languages. This is usually done automatically by determining the type of a file from its extension. If Anjuta cannot determine the type of a file, there will be no syntax highlighting. You can explicitly force a particular highlight style by selecting the style from the menu ViewEditor Highlight Mode.
+Anjuta uses a properties file named $prefix / share / anjuta / properties / anjuta.properties, which has the same format as a SciTE properties file but does not use all properties. The style of each element for all languages is defined in a file named $prefix / share / anjuta / properties / styles.properties. It uses some common properties defined by Anjuta in the file $home / .config / anjuta / scintilla / editor-style.properties.
+Code folding
+Anjuta can display code folds for source files in block-structured languages (such as C, C + +, Pascal, and Java). All code blocks in a source file can be folded or unfolded by clicking on the fold points in the code fold margin of the Editor window (usually a + / - symbol or up / down arrow). These fold points automatically appear for source files which use code blocks.
+Code folding is especially useful when editing large source files with thousands of lines. Once the folds are closed, a document appears to become smaller, facilitating easy browsing and editing of the file.
+Please note that code folding and editor guides are only available in the Scintilla-based editor.
+Auto-formatting source code
+Anjuta can automatically indent (auto-format) C or C + + source or header files. This gives a clean look to the source code, increases legibility, reduces the likelihood of syntax errors, and above all saves time. To auto-indent the current source file, choose EditAuto Indent on the menu bar. You can change the style of formatting by customizing the choices in the preferences.
+You can browse C and C + + source and header files using tags in the files. A tag (or symbol) refers to a named entity such as a function definition, structure, or macro. Anjuta scans open C and C + + source and header files for available tags.
+Symbol browser
+Anjuta will automatically scan for tags in all of the source and header files of any open project. You can jump to any function definition, structure definition, class definition or other tag without manually opening the containing file. You don't even have to know which file the tag is found in. The symbol browser lists all available symbols in the project.
+Tag synchronization
+You don't have to worry about the synchronization and update of the tag database. Anjuta will take care of everything. You just have to decide which tag you want to go to!
+Searching for and Replacing text in files
+Searching
+To search for a string or regular expression in the current file, choose EditSearchFind or press CtrlAltF. This will open the Find dialog.
+Use the text box to specify the string to search for, and select whether it is a normal string or a regular expression. You can also specify the direction of search, whether the search is case-sensitive or not, and the scope of the search. Click Search to start searching.
+If the search is successful, Anjuta will jump to the matched text or perform another action (according to the Search Action you choose in the Search Target tab). If the search is not successful, Anjuta will display a message indicating that the search text was not found.
+If you want to search again, click the Search button again or press CtrlG. This will find the next match (use ShiftCtrlG for the previous match). You can even change the search text when you do this; enter the new string in the Search Expression text box in the search dialog.
+Search Text dialog
+To stop a long search, press the Stop button.
+Specifying Search Range
+In the Search Target tab, define the search location and the action to be performed if the search succeeds.
+You can define the maximum number of actions to be performed.
+Search Target dialog
+You can select which text will be searched.
+Search Target In choice
+Searching in Files
+To find text in your project, set Search In to All Project Files.
+In the Search Expression tab, enter the text you want to search for and specify search options, such as the Match case or Match complete words options. Click Search to start searching.
+To find text in a set of files, set Search In to Specify File Patterns. Define the search variables. Click Search to start searching.
+Search File Pattern
+Specifying a Search Action
+You can select which action will be performed when a search succeeds.
+Depending on the previous selections (Search In, Search Direction, and so on), some actions may be unavailable.
+Search Target Action choice
+Replacing
+Searching and replacing is similar to just finding text, except that you also specify the replacement text in the Replace With text box, and also specify whether or not you want to be prompted before each replacement takes place (Replace First Match or Replace All Matches).
+Choose Replace to replace the matched text or Forward to jump to the next matched text.
+Search Setting
+You may also save search options.
+The item highlighted in red is the active item. The default item specifies search settings which are loaded when Anjuta launches.
+Search Setting dialog
+Printing a file
+Print preview of a C file
+Print preview
+You can perform a print preview by selecting FilePrint Preview. This will render the current file and present a preview of the print. Source code which is highlighted in the editor is also highlighted similarly in the preview (and subsequent print). The Printing tab of your editor plugin preferences contains additional options which let you print with line numbers, wrapped lines and / or headers.
+Print preferences
+When you are ready to print and satisfied with the preview, select FilePrint or Print from the print preview window. This will bring up the actual print dialog as shown below. Select the appropriate print parameters and press Print to print the file.
+You can also set landscaped or portrait page layout and the paper size, page orientation and paper type. Remember to set them up properly according to your printer, otherwise printing may not look correct.
+Print Dialog
+Anjuta has a powerful Project Manager plugin which can open most automake / autoconf-based projects. It might fail on some oddly-configured projects, but as long as the project uses automake / autoconf in a typical way, it should work.
+The neat thing is that Anjuta does not store any project information beyond what is already available in the project structure. That is, there is no separate project data maintained by Anjuta and all project processing is done directly within the project structure. This allows a project to be maintained or developed outside Anjuta without any need to convert to or from an Anjuta-specific format. Since technically Anjuta projects are just automake projects, mixed development (with both Anjuta and non-Anjuta users) or switching back and forth between Anjuta and other tools is quite possible without any hindrance.
+Creating a project from a template
+To create a project, choose the menu item FileNewProject … to start the application wizard. Read the first page carefully. Click on Next to proceed.
+Select the type of application you want to create in the second page. Click on Next to proceed.
+The final step is to verify the information you have just supplied. Click on Finish to start generating the project.
+Once the project has been generated, you can try it out by building it and executing it.
+The import project feature only works if your existing project uses autoconf / automake or, to a very limited extent, a plain Makefile.
+Loading and Saving Projects
+Loading Projects
+To open a project, choose the menu item FileOpen …. Select the project file (* .anjuta) in the dialog and click OK.
+If the project has recently been opened, then you will find it listed in the menu FileRecent. Choose the project filename from the list, and the project will be opened.
+Saving Projects
+The project is automatically saved when you close because all changes are made directly in the project structure.
+Project structure
+Project window
+The Project window
+Groups and targets
+Adding Groups
+Select ProjectAdd Group and a dialog to add a new group will pop up.
+Select the group under which to add the new group.
+Enter the name of the new group and click Add.
+To add a new group (which is a directory in automake-based projects):
+With automake projects, a new directory with the given name will be created under the parent group's directory.
+Removing Groups
+Right-click the group in the Project Manager view.
+Select Remove from the context menu.
+To remove a group:
+Select the target type.
+To add a new target:
+Removing Targets
+To remove a target:
+Adding and Removing Files
+Removing Source Files
+A confirmation dialog will appear, and the file will be removed from the project.
+The file is not deleted!
+The file is not deleted from the filesystem. It still exists, and you can add it back again later if you so wish. The file is only removed from the project listing, and will not take part in any project operations such as compiling, building, or distribution.
+$(prefix): The installation prefix. The project is installed under various subdirectories under this prefix. By default it is / usr / local.
+$(bindir): The installation directory for executable binaries. All your executable and script targets will be installed in this directory. By default, it is $(prefix) / bin.
+$(libdir): The installation directory for libraries. All your library targets (both shared and static) will be installed in this directory or a subdirectory below it. By default, it is $(prefix) / lib.
+Some of the many common variables are listed here. For full list of them see the automake info documentation.
+Project properties
+Project properties dialog
+Group properties
+Group properties dialog
+Target properties dialog
+Compile and Build
+Compiling a file
+Other operations
+Installing a project
+System-wide installation
+The command-line parameters
+The working directory
+Environment variables
+Environment variables displayed in light gray are the current environment variables. You can add, modify or remove environment variables here.
+Adding source directories
+Execution
+Run / Continue
+Breakpoint view
+Location
+Address
+Type
+Condition
+State
+File _ name: Line _ number
+Function _ name
+File: Function _ name
+Expressions
+Listing local variables
+Stack Trace
+Stack Window
+Thread
+Thread Window
+CPU
+Others
+Dynamically loaded Libraries
+Kernel Signals
+Kernel Signals window
+Information about used files
+Information about kernel structure
+Information about global variables
+Information about the current function arguments
+User command
+Quick start
+Glade general usage questions
+Widget name
+Default signal
+Preferences
+Automatically add resources
+Handler template
+General
+File Manager
+User-defined Tools
+The tools plugin has to be enabled to use this feature!
+Tools Examples
+This is a simple example how to use the tools plugin to integrate the GNOME ChangeLog generation script.
+The tool editor
+Authors
+The Anjuta project was founded by Naba Kumar. This page lists all Anjuta contributors.
+For more information on Anjuta, please visit the project website at http: / / anjuta.org. Bug reports should be made using the Bug Tracker at the project development site http: / / www.sourceforge.net / projects / anjuta.
+This manual was written by Naba Kumar, Andy Piper, Biswapesh Chattopadhyay and Johannes Schmid. Please send all comments and suggestions regarding this manual to the Anjuta Devel list anjuta-devel-list @ gnome.org. Comments may also be submitted via the project trackers at SourceForge.
+License
+This program is free software; you can redistribute it and / or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+A copy of the GNU General Public License is included as an appendix to the GNOME Users Guide. You may also obtain a copy of the GNU General Public License from the Free Software Foundation by visiting their Web site or by writing to Free Software Foundation, Inc. 51 Franklin Street Fifth Floor Boston, MA02110-1301USA
+Anjuta
+Integrated Development Environment
+Develop software in an integrated development environment
+IDE; development; programming;
+Autogen is busy
+Could not write definition file "% s":% s
+Could not open file "% s":% s
+Text
+Text to render
+Pixbuf Object
+The pixbuf to render.
+Unable to find plugin module% s
+Unable to find plugin registration function% s in module% s
+Unknown error in module% s
+Column% i
+Column 1
+The file you are trying to open contains an invalid byte sequence.
+Anjuta was not able to automatically determine the encoding of the file you want to open.
+Missing location of plugin% s
+Missing type defined by plugin% s
+plugin% s fails to register type% s
+Unicode
+Western
+Central European
+South European
+Baltic
+Cyrillic
+Arabic
+Greek
+Hebrew Visual
+Hebrew
+Turkish
+Nordic
+Celtic
+Romanian
+Armenian
+Chinese Traditional
+Cyrillic / Russian
+Japanese
+Korean
+Chinese Simplified
+Georgian
+Cyrillic / Ukrainian
+Vietnamese
+Thai
+Unknown
+Help text
+Text to show the user what to enter into the entry
+Environment Variables:
+Name
+Value
+Path that dropped files should be relative to
+Drop a file or enter a path here
+Select Files
+Path that all files in the list should be relative to
+Show Add button
+Display an Add button
+[Pp] assword. *:
+Cannot execute command: "% s"
+execvp failed
+Anjuta Shell
+Anjuta shell that will contain the plugin
+Plugin '% s' does not want to be deactivated
+Could not load% s This usually means that your installation is corrupted. The error message leading to this was:% s
+Load
+Available Plugins
+Preferred plugins
+Only show user activatable plugins
+These are the plugins selected by you when you have been prompted to choose one of many suitable plugins. Removing the preferred plugin will let you choose a different plugin.
+Forget selected plugin
+Select a plugin
+Please select a plugin to activate
+No plugin is able to load other plugins in% s
+Please select a plugin to activate
+Remember this selection
+Profiles
+Current stack of profiles
+Available plugins
+Currently available plugins found in plugin paths
+Activated plugins
+Currently activated plugins
+Anjuta shell for which the plugins are made
+Anjuta Status
+Anjuta status to use in loading and unloading of plugins
+Loading:
+Category
+General
+Anjuta Preferences
+Plugin Manager
+The plugin manager to use for resolving plugins
+Profile Name
+Name of the plugin profile
+Synchronization file
+File to syncronize the profile XML
+Please select a plugin from the list
+Failed to read '% s': XML parse error. Invalid or corrupted Anjuta plugins profile.
+% s: Install it from '% s'
+Failed to read '% s': Following mandatory plugins are missing
+Select the items to save:
+If you do not save, all your changes will be lost.
+Save
+Item
+_ Discard changes
+There is an item with unsaved changes. Save changes before closing?
+% 1 attribute of% 2 element must have a value of% 3.
+% 1 attribute of% 2 element must have a value of% 3 or% 4.
+% 1 element must not have% 2 and% 3 attribute together.
+% 1 attribute of% 2 element must not be% 3.
+% 1 element must have either% 2 or% 3 attribute.
+% 1 element must have either% 2 attribute or% 3 or% 4 as child element.
+% 1 element requires either% 2 or% 3 attribute.
+Text or entity references not allowed inside% 1 element
+% 1 element is not allowed in this context.
+% 1 attribute of% 2 element must either contain% 3 or the other values.
+Element% 1 already defined.
+Attribute% 1 already defined.
+Type% 1 already defined.
+Attribute group% 1 already defined.
+Update
+Delete this record?
+Save edits?
+Confirm
+Cancel your edits?
+Defaults
+% 1,% 2 not defined
+Ambiguous% 1 not handled
+Operation stopped by the user
+Line up
+Customize...
+More...
+Error creating SSL context (% 1)
+Invalid or empty cipher list (% 1)
+Cannot provide a certificate with no key,% 1
+Error loading local certificate,% 1
+Error loading private key,% 1
+Private key does not certify public key,% 1
+Error creating SSL session,% 1
+Error creating SSL session:% 1
+Unable to write data:% 1
+Error while reading:% 1
+Error during SSL handshake:% 1
+No error
+The peer did not present any certificate
+No suitable proxy found
+Cannot open% 1: is a directory
+Logging in to% 1 failed: authentication required
+Error while downloading% 1:% 2
+Error while uploading% 1:% 2
+Operation not supported on% 1
+Invalid URI:% 1
+Protocol "% 1" is unknown
+Operation canceled
+Request for opening non-local file% 1
+Cannot open% 1: Path is a directory
+Error opening% 1:% 2
+Write error writing to% 1:% 2
+Socket error on% 1:% 2
+Remote host closed the connection prematurely on% 1
+Error opening% 1
+Error downloading% 1 - server replied:% 2
+Read error reading from% 1:% 2
+No host name given
+Invalid hostname
+Unknown address type
+Host not found
+This platform does not support IPv6
+Connection to proxy refused
+Connection to proxy closed prematurely
+Proxy host not found
+Connection to proxy timed out
+Proxy authentication failed
+Proxy authentication failed:% 1
+SOCKS version 5 protocol error
+General SOCKSv5 server failure
+Connection not allowed by SOCKSv5 server
+Network unreachable
+Connection refused
+TTL expired
+SOCKSv5 command not supported
+Address type not supported
+Unknown SOCKSv5 proxy error code 0x% 1
+Network operation timed out
+Operation on socket is not supported
+Unable to initialize non-blocking socket
+Unable to initialize broadcast socket
+Attempt to use IPv6 socket on a platform with no IPv6 support
+The remote host closed the connection
+Out of resources
+Unsupported socket operation
+Protocol type not supported
+Invalid socket descriptor
+Host unreachable
+Connection timed out
+The bound address is already in use
+The address is not available
+The address is protected
+Datagram was too large to send
+Unable to send a message
+Unable to receive a message
+Unable to write
+Network error
+Another socket is already listening on the same port
+Operation on non-socket
+The proxy type is invalid for this operation
+Socket operation timed out
+Socket is not connected
+Go to Line
+Line:
+Interrupt
+Shift + F5
+F5
+Step Into
+F11
+Step Over
+F10
+Step Out
+Shift + F11
+Run to Cursor
+Ctrl + F10
+Run to New Script
+Toggle Breakpoint
+F9
+Clear Debug Output
+Clear Error Log
+Clear Console
+& Find in Script...
+Ctrl + F
+Find & Next
+F3
+Find & Previous
+Shift + F3
+Ctrl + G
+Debug
+Previous
+Next
+Case Sensitive
+Whole words
+nbsp; Search wrapped
+ID
+Location
+Condition
+Ignore-count
+Single-shot
+Hit-count
+New
+Loaded Scripts
+Breakpoints
+Stack
+Locals
+Console
+Debug Output
+Error Log
+Qt Script Debugger
+Level
+Disable Breakpoint
+Enable Breakpoint
+Breakpoint Condition:
+Seek failed
+Not ready to play
+Error opening file
+Error opening URL
+Audio Output
+The audio output device
+Error opening source: type not supported
+Error opening source: media type could not be determined
+Audio Equalizer
+Distance Attenuation
+Loudness
+Source Orientation
+Not found
+Out of memory
+Not supported
+Overflow
+Underflow
+Already exists
+Path not found
+In use
+Not ready
+Access denied
+Could not connect
+Disconnected
+Network unavailable
+Network communication error
+Streaming not supported
+Invalid protocol
+Invalid URL
+Proxy server error
+Proxy server not supported
+Audio output error
+Video output error
+Decoder error
+Audio or video components could not be played
+DRM error
+Unknown error (% 1)
+Cannot start playback. Check your GStreamer installation and make sure you have libgstreamer-plugins-base installed.
+A required codec is missing. You need to install the following codec (s) to play this content:% 0
+Could not open media source.
+Invalid source type.
+Could not locate media source.
+Could not open audio device. The device is already in use.
+Could not decode media source.
+Warning: You do not seem to have the package gstreamer0.10-plugins-good installed. Some video features have been disabled.
+Warning: You do not seem to have the base GStreamer plugins installed. All audio and video support has been disabled
+Volume:% 1%
+Use this slider to adjust the volume. The leftmost position is 0%, the rightmost is% 1%
+Muted
+Revert back to device '% 1'
+Notifications
+Communication
+Games
+Accessibility
+Submit
+This is a searchable index. Enter search keywords:
+Choose File
+No file selected
+Open in New Window
+Save Link...
+Copy Link
+Open Image
+Save Image
+Copy Image
+Open Frame
+Go Forward
+No Guesses Found
+Add To Dictionary
+Search The Web
+Look Up In Dictionary
+Open Link
+Spelling
+Show Spelling and Grammar
+Hide Spelling and Grammar
+Check Spelling
+Check Spelling While Typing
+Check Grammar With Spelling
+Fonts
+Underline
+Outline
+Direction
+Text Direction
+Default
+Right to Left
+Inspect
+No recent searches
+Recent searches
+Clear recent searches
+% 1 (% 2x% 3 pixels)
+Loading...
+Live Broadcast
+Audio Element
+Video Element
+Mute Button
+Unmute Button
+Play Button
+Slider
+Slider Thumb
+Rewind Button
+Return to Real-time Button
+Elapsed Time
+Remaining Time
+Status Display
+Fullscreen Button
+Seek Forward Button
+Seek Back Button
+Audio element playback controls and status display
+Video element playback controls and status display
+Mute audio tracks
+Unmute audio tracks
+Begin playback
+Pause playback
+Movie time scrubber
+Rewind movie
+Return streaming movie to real-time
+Current movie time
+Remaining movie time
+Current movie status
+Play movie in full-screen mode
+Seek quickly back
+Seek quickly forward
+Indefinite time
+% 1 days% 2 hours% 3 minutes% 4 seconds
+% 1 hours% 2 minutes% 3 seconds
+% 1 minutes% 2 seconds
+% 1 seconds
+Bad HTTP request
+JavaScript Alert -% 1
+JavaScript Confirm -% 1
+JavaScript Prompt -% 1
+JavaScript Problem -% 1
+Move the cursor to the next character
+Move the cursor to the previous character
+Move the cursor to the next word
+Move the cursor to the previous word
+Move the cursor to the next line
+Move the cursor to the previous line
+Move the cursor to the start of the line
+Move the cursor to the end of the line
+Move the cursor to the start of the block
+Move the cursor to the end of the block
+Move the cursor to the start of the document
+Move the cursor to the end of the document
+Select all
+Select to the next character
+Select to the previous character
+Select to the next word
+Select to the previous word
+Select to the next line
+Select to the previous line
+Select to the start of the line
+Select to the end of the line
+Select to the start of the block
+Select to the end of the block
+Select to the start of the document
+Select to the end of the document
+Delete to the start of the word
+Delete to the end of the word
+Insert a new paragraph
+Insert a new line
+Strikethrough
+Subscript
+Indent
+Outdent
+Center
+Align Left
+Align Right
+Fake error!
+Web Inspector -% 2
+System
+Restore up
+Restore down
+Contains commands to manipulate the window
+Puts a minimized window back to normal
+Moves the window out of the way
+Puts a maximized window back to normal
+Makes the window full screen
+Closes the window
+Displays the name of the window and contains controls to manipulate it
+Uncheck
+Check
+Toggle
+Press
+More
+Less
+Position
+Line down
+QDial
+SpeedoMeter
+SliderHandle
+Scroll Left
+Scroll Right
+Dock
+Float
+Execute
+Select IM
+Multiple input method switcher
+Multiple input method switcher that uses the context menu of the text widgets
+Volume:% 1%
+Use this slider to adjust the volume. The leftmost position is 0%, the rightmost is% 1%
+Muted
+Revert back to device '% 1'
+Notifications
+Music
+Video
+Communication
+Games
+Accessibility
+Your names
+Your emails
+Cannot start playback. Check your Gstreamer installation and make sure you have libgstreamer-plugins-base installed.
+A required codec is missing. You need to install the following codec (s) to play this content:% 0
+Could not open media source.
+Invalid source type.
+Could not locate media source.
+Could not open audio device. The device is already in use.
+Could not decode media source.
+Warning: You do not seem to have the package gstreamer0.10-plugins-good installed. Some video features have been disabled.
+Warning: You do not seem to have the base GStreamer plugins installed. All audio and video support has been disabled
+Phonon Xine Backend
+ALSA default output
+The Platform Plugin failed. This is a fallback to use the first ALSA device available.
+OSS default output
+The Platform Plugin failed. This is a fallback to use the first OSS device available.
+Jack Audio Connection Kit
+JACK is a low-latency audio server. It can connect a number of different applications to an audio device, as well as allowing them to share audio between themselves. JACK was designed from the ground up for professional audio work, and its design focuses on two key areas: synchronous execution of all clients, and low latency operation.
+aRts
+aRts is the old sound server and media framework that was used in KDE2 and KDE3. Its use is discouraged.
+Esound (ESD)
+Equalizes audio using the very good IIR equalizer code by Anders Johansson adopted from Audacious project. Parameters: Preamp gain - used to alter up or down all gain values 10 Equalizer bands - actual IIR equalizer parameters.
+Volume
+Fade Curve
+Fade To Volume
+Fade Time
+Start Fade
+Normalizes audio by maximizing the volume without distorting the sound. Parameters: method: 1: use a single sample to smooth the variations via the standard weighted mean over past samples (default); 2: use several samples to smooth the variations via the standard weighted mean over past samples.
+Cannot find input plugin for MRL [% 1]
+Cannot find demultiplexer plugin for the given media data
+Cannot find demultiplexer plugin for MRL [% 1]
+Xine failed to create a stream.
+Playback failed because no valid audio or video outputs are available
+PulseAudio
+fade curve
+current volume
+volume to fade to
+fade time in milliseconds
+Fade in or fade out with different fade curves
+.
+Name
+text box and click
+Add
+.
+Colour bar
+Shortcut Keys for Drawing Objects
+/ text / sdraw / guide / keyboard.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+accessibility;% PRODUCTNAME Draw
+draw objects; text entry mode
+text entry mode for draw objects
+Shortcut Keys for Drawing Objects
+You can create and edit drawing objects using the keyboard.
+To Create and Edit a Drawing Object
+F6
+to navigate to the
+Drawing
+bar.
+Right
+arrow key until you reach the toolbar icon of a drawing tool.
+Up
+or
+Down
+arrow key to open the sub-toolbar, then press the
+Right
+or
+Left
+key to select an icon.
+Command
+Ctrl
+.
+The object is created at the centre of the current document.
+Command
+Ctrl
+.
+To Select an Object
+Command
+Ctrl
+Tab
+until you reach the object you want to select.
+Cross-Fading Two Objects
+/ text / sdraw / guide / cross _ fading.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+draw objects; cross-fading two objects
+cross-fading; two draw objects
+Cross-Fading Two Objects
+Cross-fading creates shapes and distributes them by uniform increments between two drawing objects.
+The cross-fading command is only available in $[officename] Draw.
+You can, however, copy and paste cross-faded objects into $[officename] Impress.
+To cross-fade two objects:
+Hold down Shift and click each object.
+Edit - Cross-fading
+Increments
+box.
+OK
+.
+A group containing the two original objects and the specified number (increments) of cross-faded objects is displayed.
+Illustration for crossfading
+Command
+Ctrl
++ F3 to exit the group editing mode.
+Editing - Cross-fading
+Adding Text
+/ text / sdraw / guide / text _ enter.xhp
+text frames
+inserting; text frames
+copying; text from other documents
+pasting; text from other documents
+legends; drawings
+mw changed "adding;" to "inserting;"
+Adding Text
+There are several types of text you can add to a drawing or presentation:
+Text in a text box
+Text that changes character size to fill the frame
+Text that is added to any drawing object by double-clicking the object
+Text that is copied from a Writer document
+Text that is inserted from a text document or HTML document
+Adding a Text Box
+Text
+Icon
+and move the mouse pointer to where you want to create the text box.
+Drag a text box to the size you want in your document.
+Type or paste your text in the text box.
+Double-click the text to edit it or to format text properties, such as font size or font colour.
+Click the border of the text box to edit the object properties, such as border colour or arranging in front of or behind other objects.
+Fitting Text to Frames
+Create a text box as described in the steps above.
+Format - Text
+.
+The
+Text
+dialogue box opens.
+Text
+tab page, unmark the
+Fit height to text
+check box, then mark the
+Fit to frame
+check box.
+Click
+OK
+.
+Now you can resize the text box to change the size and shape of the text characters.
+Text Tied to a Graphic
+You can add text to any graphic after double-clicking the graphic.
+Format - Text
+.
+Callouts
+Icon
+to open the Callouts toolbar.
+Select a callout and move the mouse pointer to where you want the callout to start.
+Drag to draw the callout.
+Enter the text.
+Copying Text
+Select the text in your Writer document.
+Edit - Copy
+).
+Click the page or slide into which you want to paste the text.
+Edit - Paste
+or
+Edit - Paste special
+.
+Paste special
+, you can choose the text format to be pasted.
+Depending on formats, you can copy different text attributes.
+Importing Text
+Click the page or slide into which you want to import the text.
+Insert - File
+.
+Insert
+.
+The
+Insert Text
+dialogue box opens.
+Click
+OK
+to insert the text.
+Insert
+/ text / sdraw / main0104.xhp
+Insert
+This menu allows you to insert elements, such as graphics and guides, into Draw documents.
+Slide
+Layer
+Insert Snap Point / Line
+Comment
+Special Character
+Hyperlink
+Spreadsheet
+Chart
+Inserts a chart.
+Floating Frame
+File
+Insert Page
+/ text / sdraw / 01 / 04010000.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Insert Page
+Inserts a blank page after the selected page.
+Tools
+/ text / sdraw / main0106.xhp
+Tools
+This menu provides tools for $[officename] Draw as well as access to language and system settings.
+AutoCorrect Options
+Customise
+Drawing Bar
+/ text / sdraw / main0210.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Drawing
+bar holds the main drawing tools.
+Rectangle
+Draws a filled rectangle where you drag in the current document.
+Click where you want to place a corner of the rectangle, and drag to the size you want.
+To draw a square, hold down Shift while you drag.
+Ellipse
+Draws a filled ellipse where you drag in the current document.
+Click where you want to draw the ellipse, and drag to the size you want.
+To draw a circle, hold down Shift while you drag.
+Text
+Draws a text box where you click or drag in the current document.
+Click anywhere in the document, and then type or paste your text.
+Points
+Enables you to edit points on your drawing.
+Glue Points
+Enables you to edit glue points on your drawing.
+From File
+Form Controls
+Extrusion On / Off
+Switches the 3-D effects on and off for the selected objects.
+To access this command...
+/ text / sdraw / 00 / 00000004.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+To access this command...
+Toolbars
+/ text / sdraw / main0200.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Toolbars
+This section provides an overview of the toolbars available in $[officename] Draw.
+Shortcut Keys for Drawings
+/ text / sdraw / 04 / 01020000.xhp
+shortcut keys; in drawings
+drawings; shortcut keys
+Shortcut Keys for Drawings
+The following is a list of shortcut keys specific to Drawing documents.
+general shortcut keys for $[officename]
+.
+Function Keys for Drawings
+Shortcut Keys
+Effect
+F2
+Add or edit text.
+F3
+Opens group to edit individual objects.
+Command
+Ctrl
++ F3
+Close group editor.
+Duplicate
+dialogue box.
+F4
+Position and Size
+F5
+Navigator
+F7
+Checks spelling.
+Command
+Ctrl
++ F7
+Thesaurus
+F8
+Edit points on / off.
+Command
+Ctrl
++ Shift + F8
+Fits to frame.
+F11
+Opens Styles and Formatting window.
+zooming; shortcut keys
+drawings; zoom function in
+Shortcut Keys for Drawings
+Shortcut Keys
+Effect
+Plus (+) Key
+Zooms in.
+Minus (-) Key
+Zooms out.
+Multiply (*) Key (number pad)
+Zooms to fit entire page in screen.
+Divide (/) Key (number pad)
+Zooms in on the current selection.
+Command
+Ctrl
++ Shift + G
+Groups selected objects.
+Command + Option
+Ctrl + Alt
++ A
+Ungroups selected group.
+Command
+Ctrl
++ Shift + K
+Combines selected objects.
+Command + Option
+Ctrl + Alt
++ Shift + K
+Uncombines selected object.
+Command
+Ctrl
++ Shift + +
+Bring to front.
+Command
+Ctrl
++ +
+Bring forwards.
+Command
+Ctrl
++ -
+Send backwards.
+Command
+Ctrl
++ Shift + -
+Send to back.
+Shortcut Keys Specific to Drawings
+Shortcut Keys
+Effect
+Page Up
+Switch to previous page
+Page Down
+Switch to next page
+Command
+Ctrl
++ Page Up
+Switch to next layer
+Command
+Ctrl
++ Page Down
+Switch to previous layer
+Arrow Key
+Moves the selected object in the direction of the arrow key.
+Command
+Ctrl
++ Arrow Key
+Moves the page view in the direction of the arrow key.
+Command
+Ctrl
+-click while dragging an object.
+Note: you must first enable the
+Copy when moving
+option in Tools - Options -% PRODUCTNAME Draw - General to use this shortcut key.
+Creates a copy of the dragged object when mouse button is released.
+Command
+Ctrl
++ Enter with keyboard focus (F6) on a drawing object icon on Tools bar
+Inserts a drawing object of default size into the centre of the current view.
+Shift + F10
+Opens the context menu for the selected object.
+F2
+Enters text mode.
+Enter
+Enters text mode if a text object is selected.
+Command
+Ctrl
++ Enter
+Enters text mode if a text object is selected.
+If there are no text objects or if you have cycled through all of the text objects on the page, a new page is inserted.
+Option
+Alt
+Option
+Alt
+key and drag with the mouse to draw or resize an object from the centre of the object outward.
+Option
+Alt
++ click on an object
+Selects the object behind the currently selected object.
+Option
+Alt
++ Shift + click an object
+Selects the object in front of the currently selected object.
+Shift key while selecting an object
+Adds or removes object to or from the selection.
+Shift + drag while moving an object
+The movement of the selected object is constrained by multiples of 45 degrees.
+Shift + drag while creating or resizing an object
+Constrains the size to keep the object's aspect ratio.
+Tab
+Cycles through the objects on the page in the order in which they were created.
+Shift + Tab
+Cycles through the objects on the page in the reverse-order to which they were created.
+Exits current mode.
+$[officename] Draw Features
+/ text / sdraw / main0503.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+$[officename] Draw Features
+$[officename] Draw lets you create simple and complex drawings and export them in a number of common image formats.
+You can also insert tables, charts, formulae and other items created in $[officename] programs into your drawings.
+Vector Graphics
+$[officename] Draw creates vector graphics using lines and curves defined by mathematical vectors.
+Vectors describe lines, ellipses, and polygons according to their geometry.
+Creating 3-D Objects
+You can create simple 3-D objects such as cubes, spheres, and cylinders in $[officename] Draw and even modify the light source of the objects.
+Grids and Guides
+Grids and guides provide a visual cue to help you align objects in your drawing.
+You can also choose to snap an object to a grid line, guide or to the edge of another object.
+Connecting Objects to Show Relationships
+You can connect objects in $[officename] Draw with special lines called "connectors" to show the relationship between objects.
+Connectors attach to glue points on drawing objects and remain attached when the connected objects are moved.
+Connectors are useful for creating organisation charts and technical diagrams.
+Displaying Dimensions
+Technical diagrams often show the dimensions of objects in the drawing.
+In $[officename] Draw, you can use dimension lines to calculate and display linear dimensions.
+Gallery
+The Gallery contains images, animations, sounds and other items that you can insert and use in your drawings as well as other $[officename] programs.
+Graphic File Formats
+$[officename] Draw can export to many common graphic file formats, such as BMP, GIF, JPG, and PNG.
+Edit
+/ text / sdraw / main0102.xhp
+Paste Special
+Find & Replace
+Points
+Enables you to edit points on your drawing.
+Glue points
+Enables you to edit glue points on your drawing.
+Duplicate
+Cross-fading
+Fields
+UFI removed Layer command (as I did in zillion CWSs before...)
+Links
+ImageMap
+Hyperlink
+Menus
+/ text / sdraw / main0100.xhp
+Sun Microsystems, Inc.
+converted from old format - fpe
+Menus
+The following is a description of all $[officename] Draw menus, sub-menus and their dialogue boxes.
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+The default config.m4 shown in Example 27-1 is a bit more complex:
+Example 27-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Example 38-1 shows a small demonstration of calling a user function.
+Example 38-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+PHP defines a set of macros that can be used in this process, the most useful of which are described in Table 41-1.
+Table 41-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Example 28-1 shows the source.
+Example 28-1.
+Note:
+The module shown earlier in Example 28-1 can be enabled with --enable-first _ module or --enable-first _ module = yes.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Prev
+Home
+Next
+readgzfile
+PHP Manual
+Prev
+Next
+Access to initialization entries can also be handled with the macros shown in Table 39-1.
+Table 39-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 26.
+Next
+Note:
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 26.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Note:
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 26.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 26.
+Next
+Warning
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 26.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+This might sound a bit confusing at first, but it 's not that complicated (see Figure 24-1).
+Figure 24-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 25.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 25.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+As shown in Figure 24-1 As shown in Figure 24-1 above, PHP can be extended primarily at three points: external modules, built-in modules, and the Zend engine.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 36.
+Next
+For examples of these functions, see Example 36-2.
+Example 36-2.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 36.
+Next
+Example 36-1 Example 36-1 shows a source example and its output.
+Example 36-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 36.
+Next
+Table 36-1.
+Figure 36-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+These macros automatically set the correspondent type and value, as described in Table 35-1 and Table 35-2.
+Note:
+The macros in Table 35-1 automatically return from your function, those in Table 35-2 only set the return value; they don't return from your function.
+Table 35-1.
+Table 35-2.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 31.
+Next
+The parameter list of this declaration is very important; you should keep these parameters in mind (see Table 31-1 for descriptions).
+Table 31-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 31.
+Next
+Internally, zend _ function _ entry is defined as shown in Example 31-1.
+Example 31-1.
+Note:
+Table 31-2 shows a list of all the macros that you can use to define functions.
+Table 31-2.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 31.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 31.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 31.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 31.
+Next
+You can see the internal definition of this module in Example 31-2.
+Example 31-2.
+For reference purposes, you can find a list of the macros involved in declared startup and shutdown functions in Table 31-3.
+Table 31-3.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 31.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+For a simple test procedure, you can copy it to your htdocs directory and try it with the source in Example 29-1.
+Warning
+Example 29-1.
+Calling this PHP file in your Web browser should give you the output shown in Figure 29-1.
+Figure 29-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+Table 33-1, Table 33-2 and Table 33-3 describe these functions.
+Table 33-1.
+Table 33-2.
+Table 33-3.
+This is done using zend _ hash _ update () () for associative arrays (see Example 33-3) and zend _ hash _ index _ update () for indexed arrays (see Example 33-4):
+Example 33-3.
+Example 33-4.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+To create your own constants, you can use the macros in Table 33-6.
+Table 33-6.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+This is somewhat bad practice, but Table Table 33-5 describes macros that do exactly this task.
+Table 33-5.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Example 33-1.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+The corresponding type value for longs is IS _ LONG (see Example 33-2).
+Example 33-2.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+Table 33-4.
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+Note:
+Note:
+Note:
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Chapter 33.
+Next
+Prev
+Home
+Next
+Up
+PHP Manual
+Prev
+Next
+Prev
+Home
+Next
+Up
+error:% B uses FPA instructions, whereas% B does not
+error:% B uses Maverick instructions, whereas% B does not
+error:% B does not use Maverick instructions, whereas% B does
+error:% B uses software FP, whereas% B uses hardware FP
+error:% B uses hardware FP, whereas% B uses software FP
+internal error: dangerous relocation
+% B: cannot create stub entry% s
+relocation should be even number
+% B (% A + 0x% lx): unresolvable relocation against symbol `% s'
+% B (% A + 0x% lx): reloc against `% s': error% d
+% B: relocation at `% A + 0x% x 'references symbol`% s' with nonzero addend
+relocation references symbol not defined in the module
+R _ BFIN _ FUNCDESC references dynamic symbol with nonzero addend
+cannot emit fixups in read-only section
+cannot emit dynamic relocations in read-only section
+R _ BFIN _ FUNCDESC _ VALUE references dynamic symbol with nonzero addend
+relocations between different segments are not supported
+warning: relocation references a different segment
+% B: unsupported relocation type% i
+% s: cannot link non-fdpic object file into fdpic executable
+% s: cannot link fdpic object file into non-fdpic executable
+* * * check this relocation% s
+% B, section% A: unresolvable relocation% s against symbol `% s'
+% B, section% A: No PLT nor GOT for relocation% s against symbol `% s'
+% B, section% A: No PLT for relocation% s against symbol `% s'
+[whose name is lost]
+% B, section% A: relocation% s with non-zero addend% d against local symbol
+% B, section% A: relocation% s with non-zero addend% d against symbol `% s'
+% B, section% A: relocation% s is not allowed for global symbol: `% s'
+% B, section% A: relocation% s with no GOT created
+% B, section% A: relocation% s has an undefined reference to `% s', perhaps a declaration mixup?
+% B, section% A: relocation% s is not allowed for symbol: `% s' which is defined outside the program, perhaps a declaration mixup?
+(too many global variables for -fpic: recompile with -fPIC)
+(thread-local data too big for -fpic or -msmall-tls: recompile with -fPIC or -mno-small-tls)
+% B, section% A: v10 / v32 compatible object% s must not contain a PIC relocation
+% B, section% A: relocation% s not valid in a shared object; typically an option mixup, recompile with -fPIC
+% B, section% A: relocation% s should not be used in a shared object; recompile with -fPIC
+% B, section `% A ', to symbol`% s': relocation% s should not be used in a shared object; recompile with -fPIC
+Unexpected machine number
+[symbols have a _ prefix]
+[v10 and v32]
+[v32]
+% B: uses _ -prefixed symbols, but writing file with non-prefixed symbols
+% B: uses non-prefixed symbols, but writing file with _ -prefixed symbols
+% B contains CRIS v32 code, incompatible with previous objects
+% B contains non-CRIS-v32 code, incompatible with previous objects
+BFD Link Error: branch (PC rel16) to section (% s) not supported
+BFD Link Error: jump (PC rel26) to section (% s) not supported
+unsupported relocation between data / insn address spaces
+relocation requires zero addend
+% H: relocation to `% s +% v 'may have caused the error above
+% H: relocation references symbol not defined in the module
+% H: R _ FRV _ GETTLSOFF not applied to a call instruction
+% H: R _ FRV _ GOTTLSDESC12 not applied to an lddi instruction
+% H: R _ FRV _ GOTTLSDESCHI not applied to a sethi instruction
+% H: R _ FRV _ GOTTLSDESCLO not applied to a setlo or setlos instruction
+% H: R _ FRV _ TLSDESC _ RELAX not applied to an ldd instruction
+% H: R _ FRV _ GETTLSOFF _ RELAX not applied to a calll instruction
+% H: R _ FRV _ GOTTLSOFF12 not applied to an ldi instruction
+% H: R _ FRV _ GOTTLSOFFHI not applied to a sethi instruction
+% H: R _ FRV _ GOTTLSOFFLO not applied to a setlo or setlos instruction
+% H: R _ FRV _ TLSOFF _ RELAX not applied to an ld instruction
+% H: R _ FRV _ TLSMOFFHI not applied to a sethi instruction
+R _ FRV _ TLSMOFFLO not applied to a setlo or setlos instruction
+% H: R _ FRV _ FUNCDESC references dynamic symbol with nonzero addend
+% H: cannot emit fixups in read-only section
+% H: cannot emit dynamic relocations in read-only section
+% H: R _ FRV _ FUNCDESC _ VALUE references dynamic symbol with nonzero addend
+% H: reloc against `% s' references a different segment
+% H: reloc against `% s':% s
+% B: unsupported relocation type% i
+% s: compiled with% s and linked with modules that use non-pic relocations
+% s: compiled with% s and linked with modules compiled with% s
+% s: uses different unknown e _ flags (0x% lx) fields than previous modules (0x% lx)
+private flags = 0x% lx:
+% B: Relocations in generic ELF (EM:% d)
+% B (% A + 0x% lx): cannot reach% s, recompile with -ffunction-sections
+% B: relocation% s can not be used when making a shared object; recompile with -fPIC
+% B: duplicate export stub% s
+% B (% A + 0x% lx):% s fixup for insn 0x% x is not supported in a non-shared link
+% B (% A + 0x% lx): cannot handle% s for% s
+.got section not immediately after .plt section
+% B: invalid relocation type% d
+% B: TLS transition from% s to% s against `% s' at 0x% lx in section`% A 'failed
+% B: `% s' accessed both as normal and thread local symbol
+% P:% B: warning: relocation against `% s' in readonly section`% A '.
+% P:% B: warning: relocation in readonly section `% A '.
+% B: unrecognized relocation (0x% x) in section `% A'
+% B: relocation% s against STT _ GNU _ IFUNC symbol `% s' isn't handled by% s
+hidden symbol
+internal symbol
+protected symbol
+symbol
+% B: relocation R _ 386 _ GOTOFF against undefined% s `% s' can not be used when making a shared object
+% B: relocation R _ 386 _ GOTOFF against protected function `% s' can not be used when making a shared object
+discarded output section: `% A'
+ip2k relaxer: switch table without complete matching relocation information.
+ip2k relaxer: switch table header corrupt.
+ip2k linker: missing page instruction at 0x% 08lx (dest = 0x% 08lx).
+ip2k linker: redundant page instruction at 0x% 08lx (dest = 0x% 08lx).
+% s: uses different e _ flags (0x% lx) fields than previous modules (0x% lx)
+global pointer relative relocation when _ gp not defined
+global pointer relative address out of range
+internal error: addend should be zero for R _ LM32 _ 16 _ GOT
+SDA relocation when _ SDA _ BASE _ not defined
+% B: The target (% s) of an% s relocation is in the wrong section (% A)
+% B: Instruction set mismatch with previous modules
+private flags =% lx
+: m32r instructions
+: m32rx instructions
+: m32r2 instructions
+Reference to the far symbol `% s' using a wrong relocation may result in incorrect execution
+banked address [% lx:% 04lx] (% lx) is not in the same bank as current banked address [% lx:% 04lx] (% lx)
+reference to a banked address [% lx:% 04lx] in the normal address space at% 04lx
+% B: linking files compiled for 16-bit integers (-mshort) and others for 32-bit integers
+% B: linking files compiled for 32-bit double (-fshort-double) and others for 64-bit double
+% B: linking files compiled for HCS12 with others compiled for HC12
+% B: uses different e _ flags (0x% lx) fields than previous modules (0x% lx)
+[abi = 32-bit int,
+[abi = 16-bit int,
+64-bit double,
+32-bit double,
+cpu = HC11]
+cpu = HCS12]
+cpu = HC12]
+[memory = bank-model]
+[memory = flat]
+unknown
+% B: GOT overflow: Number of relocations with 8-bit offset >% d
+% B: GOT overflow: Number of relocations with 8- or 16-bit offset >% d
+% B (% A + 0x% lx): R _ 68K _ TLS _ LE32 relocation not permitted in shared object
+% B: Relocation% s (% d) is not currently supported.
+% B: Unknown relocation type% d
+mep: no reloc for code% d
+MeP: howto% d has type% d
+% B and% B are for different cores
+% B and% B are for different configurations
+private flags = 0x% lx
+% s: unknown relocation type% d
+% s: The target (% s) of an% s relocation is in the wrong section (% s)
+% B: probably compiled without -fPIC?
+literal relocation occurs for an external symbol
+32bits gp relative relocation occurs for an external symbol
+dangerous relocation
+dynamic variable `% s' is zero size
+generic linker can't handle% s
+corrupt% s section in% B
+unable to read in% s section from% B
+warning: unable to set size of% s section in% B
+failed to allocate space for new APUinfo section.
+failed to compute new APUinfo section.
+failed to install new APUinfo section.
+% B: relocation% s cannot be used when making a shared object
+% P:% H:% s reloc against local symbol
+Warning:% B uses hard float,% B uses soft float
+Warning:% B uses double-precision hard float,% B uses single-precision hard float
+Warning:% B uses soft float,% B uses single-precision hard float
+Warning:% B uses unknown floating point ABI% d
+Warning:% B uses unknown vector ABI% d
+Warning:% B uses vector ABI "% s",% B uses "% s"
+Warning:% B uses r3 / r4 for small structure returns,% B uses memory
+Warning:% B uses unknown small structure return convention% d
+% B: compiled with -mrelocatable and linked with modules compiled normally
+% B: compiled normally and linked with modules compiled with -mrelocatable
+% P: bss-plt forced due to% B
+% P: bss-plt forced by profiling
+% H arg lost _ _ tls _ get _ addr, TLS optimization disabled
+% P:% B: unknown relocation type% d for symbol% s
+% P:% H: non-zero addend on% s reloc against `% s'
+% P:% H: relocation% s for indirect function% s unsupported
+% P:% B: the target (% s) of a% s relocation is in the wrong output section (% s)
+% P:% B: relocation% s is not yet supported for symbol% s
+% P:% H: unresolvable% s relocation against symbol `% s'
+% P:% H:% s reloc against `% s': error% d
+% P:% s not defined in linker created% s
+% B (% A): error: call to undefined function '% s'
+% B (% A): warning: unaligned access to symbol '% s' in the small data area
+% B (% A): internal error: out of range error
+% B (% A): internal error: unsupported relocation error
+% B (% A): internal error: dangerous relocation
+% B (% A): internal error: unknown error
+% B:% A: Warning: deprecated Red Hat reloc
+% B (% A): unsafe PID relocation% s at 0x% 08lx (against% s in% s)
+Warning: RX _ SYM reloc with an unknown symbol
+% B (% A + 0x% lx): invalid instruction for TLS relocation% s
+not enough GOT space for local GOT entries
+address not word align
+% s: Malformed reloc detected for section% s
+% B: CALL15 reloc at 0x% lx not against global symbol
+[pic]
+[fix dep]
+% B: warning: linking PIC files with non-PIC files
+% B: IMPORT AS directive for% s conceals previous IMPORT AS
+% B: Unrecognised .directive command:% s
+% B: Failed to add renamed symbol% s
+% B: 0x% lx: warning: bad R _ SH _ USES offset
+% B: 0x% lx: warning: R _ SH _ USES points to unrecognized insn 0x% x
+% B: 0x% lx: warning: bad R _ SH _ USES load offset
+% B: 0x% lx: warning: could not find expected reloc
+% B: 0x% lx: warning: symbol in unexpected section
+% B: 0x% lx: warning: could not find expected COUNT reloc
+% B: 0x% lx: warning: bad count
+% B: 0x% lx: fatal: reloc overflow while relaxing
+Unexpected STO _ SH5 _ ISA32 on local symbol is not handled
+% B: 0x% lx: fatal: unaligned branch target for relax-support relocation
+% B: 0x% lx: fatal: unaligned% s relocation 0x% lx
+% B: 0x% lx: fatal: R _ SH _ PSHA relocation% d not in range -32.. 32
+% B: 0x% lx: fatal: R _ SH _ PSHL relocation% d not in range -32.. 32
+% B (% A + 0x% lx): cannot emit fixup to `% s' in read-only section
+% B (% A + 0x% lx):% s relocation against external symbol "% s"
+% X% C: relocation to "% s" references a different segment
+% C: warning: relocation to "% s" references a different segment
+% B: `% s' accessed both as normal and FDPIC symbol
+% B: `% s' accessed both as FDPIC and thread local symbol
+% B: Function descriptor relocation with non-zero addend
+% B: TLS local exec code cannot be linked into shared objects
+% s: compiled as 32-bit object and% s is 64-bit
+% s: compiled as 64-bit object and% s is 32-bit
+% s: object size does not match that of target% s
+% s: encountered datalabel symbol in input
+PTB mismatch: a SHmedia address (bit 0 = = 1)
+PTA mismatch: a SHcompact address (bit 0 = = 0)
+% s: GAS error: unexpected PTB insn with R _ SH _ PT _ 16
+% B: error: unaligned relocation type% d at% 08x reloc% p
+% s: could not write out added .cranges entries
+% s: could not write out sorted .cranges entries
+% B: compiled for a 64 bit system and target is 32 bit
+% B: linking little endian files with big endian files
+% X% P: overlay section% A does not start on a cache line.
+% X% P: overlay section% A is larger than a cache line.
+% X% P: overlay section% A is not in cache area.
+% X% P: overlay sections% A and% A do not start at the same address.
+warning: call to non-function symbol% s defined in% B
+% A: 0x% v lrlive .brinfo (% u) differs from analysis (% u)
+% B is not allowed to define% s
+you are not allowed to define% s in a script
+% s in overlay section
+overlay stub relocation overflow
+stubs don't match calculated size
+warning:% s overlaps% s
+warning:% s exceeds section size
+% A: 0x% v not found in function table
+% B (% A + 0x% v): call to non-code section% B (% A), analysis incomplete
+Stack analysis will ignore the call from% s to% s
+% s: 0x% v
+% s: 0x% v 0x% v
+calls:
+% s% s% s
+% s duplicated in% s
+% s duplicated
+sorry, no support for duplicate object files in auto-overlay script
+non-overlay size of 0x% v plus maximum overlay size of 0x% v exceeds local store
+% B:% A% s exceeds overlay size
+Stack size for call graph root nodes.
+Stack size for functions. Annotations: '*' max stack, 't' tail call
+Maximum stack required is 0x% v
+fatal error while creating .fixup
+% B (% s + 0x% lx): unresolvable% s relocation against symbol `% s'
+warning: generating a shared library containing non-PIC code
+warning: generating a shared library containing non-PID code
+% B: SB-relative relocation but _ _ c6xabi _ DSBT _ BASE not defined
+% B: error: unknown mandatory EABI object attribute% d
+% B: warning: unknown EABI object attribute% d
+error:% B requires more stack alignment than% B preserves
+error: unknown Tag _ ABI _ array _ object _ alignment value in% B
+error: unknown Tag _ ABI _ array _ object _ align _ expected value in% B
+error:% B requires more array alignment than% B preserves
+warning:% B and% B differ in wchar _ t size
+warning:% B and% B differ in whether code is compiled for DSBT
+Variable `% s' cannot occupy in multiple small data regions
+Variable `% s' can only be in one of the small, zero, and tiny data regions
+Variable `% s' cannot be in both small and zero data regions simultaneously
+Variable `% s' cannot be in both small and tiny data regions simultaneously
+Variable `% s' cannot be in both zero and tiny data regions simultaneously
+FAILED to find previous HI16 reloc
+could not locate special linker symbol _ _ gp
+could not locate special linker symbol _ _ ep
+could not locate special linker symbol _ _ ctbp
+% B: Architecture mismatch with previous modules
+private flags =% lx:
+v850 architecture
+v850e architecture
+v850e1 architecture
+v850e2 architecture
+v850e2v3 architecture
+[nonpic]
+[d-float]
+[g-float]
+% s: warning: GOT addend of% ld to `% s' does not match previous GOT addend of% ld
+% s: warning: PLT addend of% d to `% s' from% s section ignored
+% s: warning:% s relocation against symbol `% s' from% s section
+% s: warning:% s relocation to 0x% x from% s section
+non-zero addend in @ fptr reloc
+% B (% A): invalid property table
+% B (% A + 0x% lx): relocation offset out of range (size = 0x% x)
+dynamic relocation in read-only section
+TLS relocation invalid without dynamic sections
+internal inconsistency in size of .got.loc section
+% B: incompatible machine type. Output is 0x% x. Input is 0x% x
+Attempt to convert L32R / CALLX to CALL failed
+% B (% A + 0x% lx): could not decode instruction; possible configuration mismatch
+% B (% A + 0x% lx): could not decode instruction for XTENSA _ ASM _ SIMPLIFY relocation; possible configuration mismatch
+invalid relocation address
+overflow after relaxation
+% B (% A + 0x% lx): unexpected fix for% s relocation
+GPDISP relocation did not find ldah and lda instructions
+% B: .got subsegment exceeds 64K (size% d)
+% B: gp-relative relocation against dynamic symbol% s
+% B: pc-relative relocation against dynamic symbol% s
+% B: change in gp: BRSGP% s
+< unknown >
+% B:! samegp reloc against symbol without .prologue:% s
+% B: unhandled dynamic relocation against% s
+% B: pc-relative relocation against undefined weak symbol% s
+% B: dtp-relative relocation against dynamic symbol% s
+% B: tp-relative relocation against dynamic symbol% s
+stub entry for% s cannot load .plt, dp offset =% ld
+unsupported reloc
+% B: linking 64-bit files with 32-bit files
+Warning: size of symbol `% s' changed from% lu in% B to% lu in% B
+invalid input relocation when producing non-ELF, non-mmo format output. Please use the objcopy program to convert from ELF or mmo, or assemble using "-no-expand" (for gcc, "-Wa, -no-expand"
+invalid input relocation when producing non-ELF, non-mmo format output. Please use the objcopy program to convert from ELF or mmo, or compile using the gcc-option "-mno-base-addresses".
+% s: Internal inconsistency error for value for linker-allocated global register: linked: 0x% lx% 08lx! = relaxed: 0x% lx% 08lx
+% s: base-plus-offset relocation against register symbol: (unknown) in% s
+% s: base-plus-offset relocation against register symbol:% s in% s
+% s: register relocation against non-register symbol: (unknown) in% s
+% s: register relocation against non-register symbol:% s in% s
+% s: directive LOCAL valid only with a register or absolute value
+% s: LOCAL directive: Register $% ld is not a local register. First global register is $% ld.
+% s: Error: multiple definition of `% s'; start of% s is set in a earlier linked file
+Register section has contents
+Internal inconsistency: remaining% u! = max% u. Please report this bug.
+% P:% B: cannot create stub entry% s
+% B: undefined symbol on R _ PPC64 _ TOCSAVE relocation
+% P: dynreloc miscount for% B, section% A
+% B: .opd is not a regular array of opd entries
+% B: unexpected reloc type% u in .opd section
+% B: undefined sym `% s' in .opd section
+% H _ _ tls _ get _ addr lost arg, TLS optimization disabled
+% s defined on removed toc entry
+% P: long branch stub `% s' offset overflow
+% P: can't find branch stub `% s'
+% P: can't build branch stub `% s'
+% B section% A exceeds stub group size
+% P:% s offset too large for .eh _ frame sdata4 encoding
+% P: stubs don't match calculated size
+% P:% H: error:% s not a multiple of% u
+% s: undefined version:% s
+% A has both ordered [`% A 'in% B] and unordered [`% A' in% B] sections
+warning:% s section has zero size
+Warning: gc-sections option ignored
+The Function Table (interpreted .pdata section contents)
+bad section index in% s
+% s: not supported
+% s: not implemented
+Object module NOT error-free!
+error: undefined symbol _ _ rtinit
+Resource Directory [.rsrc]
+Exception Directory [.pdata]
+Security Directory
+Debug Directory
+Description Directory
+Special Directory
+Thread Storage Directory [.tls]
+Load Configuration Directory
+Bound Import Directory
+Import Address Table Directory
+Delay Import Directory
+CLR Runtime Header
+Reserved
+There is an import table, but the section containing it could not be found
+There is an import table in% s at 0x% lx
+\ tDLL Name:% s
+There is a first thunk, but the section containing it could not be found
+There is an export table, but the section containing it could not be found
+There is an export table in% s, but it does not fit into that section
+There is an export table in% s at 0x% lx
+Export Flags\ t\ t\ t% lx
+Time / Date stamp\ t\ t% lx
+Name\ t\ t\ t\ t
+Number in:
+\ tExport Address Table\ t\ t% 08lx
+Table Addresses
+\ tExport Address Table\ t\ t
+Forwarder RVA
+Export RVA
+Warning, .pdata section size (% ld) is not a multiple of% d
+Glue code sequence
+vma:\ t\ tBegin Prolog Function Flags Exception EH\ t\ tAddress Length Length 32b exc Handler Data
+Virtual Address:% 08lx Chunk size% ld (0x% lx) Number of fixups% ld
+\ treloc% 4d offset% 4x [% 4lx]% s
+Characteristics 0x% x
+% B: unable to fill in DataDictionary [1] because .idata $2 is missing
+% B: unable to fill in DataDictionary [1] because .idata $4 is missing
+% B: unable to fill in DataDictionary [12] because .idata $5 is missing
+% B: unable to fill in DataDictionary [PE _ IMPORT _ ADDRESS _ TABLE (12)] because .idata $6 is missing
+% B: unable to fill in DataDictionary [9] because _ _ tls _ used is missing
+Usage:% s [option (s)] [addr (s)]
+Convert addresses into line number / file name pairs.
+If no addresses are specified on the command line, they will be read from stdin
