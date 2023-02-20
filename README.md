@@ -19,12 +19,16 @@ see exps/README.md
 
 ## Analysis
 1. Effects of Model Generalization
+
    See analysis/OD/eval_ende_cross_domain.sh
 2. Performance Drop under Attack
+   
    See analysis/DuA/robust_add_noisy.sh
 3. Effects of Translation Diversity
+   
    See analysis/multi-refs/eval_ende_multi_reference.sh
 4. Effects of TTR
+   
    See analysis/TTR/TTR.sh
 
 ## Citation
